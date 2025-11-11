@@ -8,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST["email"] ?? '');
     $senha = trim($_POST["senha"] ?? '');
     if (empty($email) || empty($senha)) {
-        $erro = "Por favor, preencha todos os campos.";
+        echo "<script>alert('Por favor, preencha todos os campos: e-mail e senha!'); window.history.back();</script>";
+        exit;
     } else {
         $podeLogar = realizarLogin($conexao, $email, $senha);
         if ($podeLogar === true) {
