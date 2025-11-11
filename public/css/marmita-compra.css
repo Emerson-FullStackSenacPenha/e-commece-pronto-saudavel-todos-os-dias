@@ -5,8 +5,6 @@ body {
     background-color: #f8f9fa;
 }
 
-
-
 .caixa {
     display: grid;
     grid-template-columns: 1.8fr 1.2fr;
