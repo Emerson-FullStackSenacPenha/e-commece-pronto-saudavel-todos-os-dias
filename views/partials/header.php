@@ -58,13 +58,9 @@
 
                     <?php if ($usuario_logado): ?>
                         
-                        
-
                             <a id="nome_logado" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logado.php">Olá, <?= htmlspecialchars($nome_usuario) ?></a>
-
                             <a id="sair" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php" >Sair</a>
-                        </span></a>
-
+                        
                     <?php else: ?>
                         <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php">
                             <div id="usuario"></div>
