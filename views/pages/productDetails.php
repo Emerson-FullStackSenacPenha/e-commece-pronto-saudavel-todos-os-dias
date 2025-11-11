@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marmita LowCarb</title>
-  <link rel="stylesheet" href="../../public/css/marmita-compra.css">
-</head>
-<body>
 
   <div class="caixa">
     <div>
-      <img src="marmita.png" alt="Marmita LowCarb" class="foto">
+      <img src="<?= $baseUrl ?>/public/images/products/marmita_carne.jpg" alt="Marmita LowCarb" class="foto">
       
       <div class="descricao">
         <span class="subtitulo">Descrição:</span>
@@ -71,5 +62,4 @@
     });
   </script>
 
-</body>
-</html>
+

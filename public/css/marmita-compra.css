@@ -5,12 +5,18 @@ body {
     background-color: #f8f9fa;
 }
 
+
+
 .caixa {
     display: grid;
     grid-template-columns: 1.8fr 1.2fr;
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+
+    padding-top: 150px;
+    min-height: 84.2vh;
+    overflow-x: auto;
 }
 
 .foto {
