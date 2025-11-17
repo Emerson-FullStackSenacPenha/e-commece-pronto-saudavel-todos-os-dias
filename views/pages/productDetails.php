@@ -1,7 +1,7 @@
 <?php
 $nomeProduto = "Marmita LowCarb";
 $preco = "R$ 205,00";
-$imagem = "<?= $baseUrl ?>/public/images/products/marmita_carne.jpg";
+$imagem = $baseUrl . "/public/images/products/marmita_carne.jpg"
 ?>
 
  
