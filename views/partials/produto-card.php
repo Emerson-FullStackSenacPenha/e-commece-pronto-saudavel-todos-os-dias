@@ -4,60 +4,62 @@
 ?>
 <article class="product-card">
 
-    <figure class="product-card__figure">
-        <img class="product-card__image"
-             src="<?= htmlspecialchars($produto['imagem_url']) ?>" 
-             alt="<?= htmlspecialchars($produto['nome']) ?>">
-        </img>     
-    </figure>
+    <a href="<?= $baseUrl ?>/public/index.php?page=productDetails">
+        <figure class="product-card__figure">
+            <img class="product-card__image"
+                src="<?= htmlspecialchars($produto['imagem_url']) ?>" 
+                alt="<?= htmlspecialchars($produto['nome']) ?>">
+            </img>     
+        </figure>
 
-    <div class="product-card__content">
+        <div class="product-card__content">
 
-        <div class="product-card__tags">
-             <span class="tag-item">CONTÉM GLÚTEN</span>
+            <div class="product-card__tags">
+                <span class="tag-item">CONTÉM GLÚTEN</span>
 
-            <span class="tag-item">CONTÉM LACTOSE</span>
+                <span class="tag-item">CONTÉM LACTOSE</span>
+            </div>
+
+            <div class="product-card__nutrition">
+
+            <div class="nutrition-item">
+
+                    <strong>444</strong>
+
+                    <span>KCAL</span>
+
+                </div>
+
+                <div class="nutrition-item">
+
+                    <strong>56</strong>
+
+                    <span>PROT.</span>
+
+                </div>
+
+                <div class="nutrition-item">
+
+                    <strong>120</strong>
+
+                    <span>CARB.</span>
+
+                </div>
+
+                <div class="nutrition-item">
+
+                    <strong>17</strong>
+
+                    <span>GORD.</span>
+
+                </div>
+            </div>
+            
+            <h3 class="product-card__title"><?= htmlspecialchars($produto['nome']) ?></h3>
+
+            <p class="product-card__price">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
         </div>
-
-        <div class="product-card__nutrition">
-
-        <div class="nutrition-item">
-
-                <strong>444</strong>
-
-                <span>KCAL</span>
-
-            </div>
-
-            <div class="nutrition-item">
-
-                <strong>56</strong>
-
-                <span>PROT.</span>
-
-            </div>
-
-            <div class="nutrition-item">
-
-                <strong>120</strong>
-
-                <span>CARB.</span>
-
-            </div>
-
-            <div class="nutrition-item">
-
-                <strong>17</strong>
-
-                <span>GORD.</span>
-
-            </div>
-        </div>
-        
-        <h3 class="product-card__title"><?= htmlspecialchars($produto['nome']) ?></h3>
-
-        <p class="product-card__price">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
-    </div>
+    </a>
 
     <div class="product-card__actions">
         <form action="<?= $baseUrl ?>/public/index.php" method="POST">

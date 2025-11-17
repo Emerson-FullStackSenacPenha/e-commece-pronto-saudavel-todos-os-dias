@@ -28,9 +28,23 @@ function usuarioNome() {
 
 //Destroi a sessão atual.
 function logout() {
+    // 1. Limpa e destrói a sessão no servidor
     session_unset();
     session_destroy();
-    header("Location: login.php");
+
+    // 2. Define o URL de destino
+    $url_destino = "/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=home";
+
+    // 3. Imprime o script JavaScript para o alert e redirecionamento
+    // O JS usa 'window.location.href' para redirecionar após o alert ser fechado.
+    echo "<script>";
+    // Usa '\n' para a quebra de linha dentro do alert
+    echo "alert('Você deslogou com sucesso\\nObrigado e volte sempre!');";
+    // Redireciona o navegador
+    echo "window.location.href = '{$url_destino}';";
+    echo "</script>";
+    
+    // 4. Encerra o script PHP
     exit;
 }
 

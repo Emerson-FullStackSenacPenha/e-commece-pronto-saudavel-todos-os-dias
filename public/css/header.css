@@ -331,6 +331,25 @@ header{
     
 }
 
+#nome_logado {
+
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-family: var(--text);
+
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+#sair {
+
+    text-decoration: none;
+    color: white;
+
+}
+
 @media (max-width: 770px) {
 
    #desktop {
