@@ -4,19 +4,14 @@ body {
     color: #333;
     background-color: #f8f9fa;
 }
-
 .caixa {
     display: grid;
     grid-template-columns: 1.8fr 1.2fr;
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-
-    padding-top: 150px;
-    min-height: 84.2vh;
-    overflow-x: auto;
 }
-
+ 
 .foto {
     width: 100%;
     border-radius: 8px;
@@ -24,7 +19,7 @@ body {
     border: 2px solid #000;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-
+ 
 .info {
     background-color: white;
     padding: 25px;
@@ -32,14 +27,14 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     height: fit-content;
 }
-
+ 
 .titulo {
     font-size: 24px;
     margin-bottom: 25px;
     font-weight: bold;
     color: #2c3e50;
 }
-
+ 
 .bloco-opcao {
     margin-bottom: 25px;
     padding: 15px;
@@ -48,7 +43,7 @@ body {
     border: 1px solid #e0e0e0;
     background-color: #fff;
 }
-
+ 
 .titulo-opcao {
     font-weight: bold;
     margin-bottom: 10px;
@@ -56,14 +51,14 @@ body {
     color: #444;
     font-size: 16px;
 }
-
+ 
 .area-botoes {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 10px;
 }
-
+ 
 .botao {
     padding: 8px 16px;
     background-color: #2C4E5980;
@@ -73,26 +68,26 @@ body {
     font-size: 14px;
     border: 1px solid #ddd;
 }
-
+ 
 .botao:hover, .botao.ativo {
     background-color: #4CAF50;
     color: white;
     border-color: #4CAF50;
 }
-
+ 
 .frete {
     display: flex;
     gap: 10px;
     margin: 20px 0;
 }
-
+ 
 .frete input {
     padding: 8px 12px;
     border-radius: 4px;
     border: 1px solid #ccc;
     width: 100%;
 }
-
+ 
 .frete button {
     background-color: #f1f1f1;
     border: 1px solid #ddd;
@@ -103,25 +98,25 @@ body {
     transition: 0.2s;
     white-space: nowrap;
 }
-
+ 
 .frete button:hover {
     background-color: #e0e0e0;
 }
-
+ 
 .preco {
     font-size: 28px;
     font-weight: bold;
     margin: 20px 0;
     color: #2c3e50;
 }
-
+ 
 .comprar {
     display: flex;
     align-items: center;
     gap: 15px;
     margin: 25px 0;
 }
-
+ 
 .comprar input {
     width: 70px;
     text-align: center;
@@ -130,7 +125,7 @@ body {
     border: 1px solid #ccc;
     font-size: 16px;
 }
-
+ 
 .comprar button {
     background-color: #4CAF50;
     color: white;
@@ -143,11 +138,11 @@ body {
     font-weight: bold;
     flex: 1;
 }
-
+ 
 .comprar button:hover {
     background-color: #43a047;
 }
-
+ 
 .descricao {
     background-color: white;
     padding: 20px;
@@ -156,7 +151,7 @@ body {
     margin-top: 20px;
     font-size: 14px;
 }
-
+ 
 .subtitulo {
     font-weight: bold;
     margin-bottom: 8px;
@@ -164,10 +159,56 @@ body {
     color: #444;
     font-size: 15px;
 }
-
+ 
 .descricao p {
     margin-bottom: 15px;
     line-height: 1.5;
     color: #555;
     font-size: 13px;
 }
+ 
+@media (max-width: 768px) {
+ 
+    body {
+        margin: 20px;
+    }
+ 
+    .caixa {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+ 
+    .foto {
+        width: 100%;
+    }
+ 
+    .info {
+        padding: 20px;
+    }
+ 
+    .bloco-opcao {
+        padding: 12px;
+    }
+ 
+    .area-botoes {
+        gap: 8px;
+    }
+ 
+    .frete {
+        flex-direction: column;
+    }
+ 
+    .frete button {
+        width: 100%;
+    }
+ 
+    .comprar {
+        flex-direction: column;
+    }
+ 
+    .comprar button {
+        width: 100%;
+    }
+}
+ 
+ 
