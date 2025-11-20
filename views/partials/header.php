@@ -82,7 +82,7 @@
         <ul id="lista_nav">
 
             <li><a href="<?= $baseUrl ?>/public/index.php?page=home">Inicio</a></li>
-            <li>Personal Chefe</li>
+            <li><a href="<?= $baseUrl ?>/public/index.php?page=personalChefe">Personal Chefe</a></li>
             <li><a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a></li>
             <li>Outros Produtos</li>
             <li>Quem Somos</li>
