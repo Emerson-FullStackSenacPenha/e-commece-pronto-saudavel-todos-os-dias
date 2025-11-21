@@ -7,17 +7,16 @@
 
   <div class="bloco-footer"> 
       <h3>Formas de Entrega:</h3>
-      <p>Retiradas e Entregas<br>apenas nos Sábados</p>
-      <div class="icon-local">📍</div>
+      <p>Retiradas e Entregas apenas nos Sábados</p>
   </div>
 
   <div class="bloco-footer pagamento"> 
       <h3>Formas de Pagamento:</h3>
       <div id="pagamento-footer">
-        <img src="<?php echo 'img/icons/pix.png'; ?>" alt="Pix">
-        <img src="<?php echo 'img/icons/dinheiro.png'; ?>" alt="Dinheiro">
-        <img src="<?php echo 'img/icons/debito.png'; ?>" alt="Cartão de débito">
-        <img src="<?php echo 'img/icons/credito.png'; ?>" alt="Cartão de crédito">
+        <img src="/e-commece-pronto-saudavel-todos-os-dias/views/partials/img/icons/pix.png" alt="Pix">
+        <img src="/e-commece-pronto-saudavel-todos-os-dias/views/partials/img/icons/dinheiro.png" alt="Dinheiro">
+        <img src="/e-commece-pronto-saudavel-todos-os-dias/views/partials/img/icons/debito.png" alt="Débito">
+        <img src="/e-commece-pronto-saudavel-todos-os-dias/views/partials/img/icons/credito.png" alt="Crédito">
       </div>
   </div>
 

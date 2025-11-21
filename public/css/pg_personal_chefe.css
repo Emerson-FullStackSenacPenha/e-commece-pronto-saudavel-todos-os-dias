@@ -1,0 +1,194 @@
+*{
+    margin: 0px;
+    padding-top: 0px;
+    box-sizing: border-box;
+}
+
+
+.pg_personal_chefe{
+    display: grid;
+
+    gap: 50px;
+    padding-top: 160px; 
+    
+    /* Garante que a cor de fundo preencha tudo, se houver */
+    min-height: 100vh; 
+    box-sizing: border-box;
+}
+
+:root {
+    font-family:'Times New Roman', Times, serif
+}
+.primeira_section {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 50px 0 0;
+}
+
+.galeria_personal_chefe figure {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 350px;    
+    margin: 40px auto 0px auto; /* Centraliza a galeria na página e dá um respiro */
+    /* Borda de depuração - remova depois se quiser ver a área do container */
+    /* border: 1px dashed red; */ 
+}
+
+.galeria_personal_chefe figure img {
+    position: absolute; 
+    width: 180px;      
+    height: auto;       
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+    transition: all 0.3s ease; 
+    border: 3px solid white; 
+}
+
+/* --- Posicionamento Individual de Cada Foto --- */
+.image_1_personal_chefe {
+    top: 40px;  /* Empurra um pouco para baixo */
+    left: 20px; /* Encosta na esquerda */
+    z-index: 1; /* Camada mais baixa (fundo) */
+    transform: rotate(-15deg); /* Gira para a esquerda */
+}
+
+.image_2_personal_chefe {
+    top: 40px;   /* Na mesma altura da imagem 1 */
+    right: 20px; /* Encosta na direita */
+    z-index: 2;  /* Camada do meio (acima da imagem 1) */
+    transform: rotate(15deg); /* Gira para a direita */
+}
+
+
+.image_3_personal_chefe {
+    top: 0; /* Fica mais para cima que as outras */
+    /* Truque para centralizar absolutamente: */
+    left: 50%; 
+    transform: translateX(-50%); /* Move 50% dela mesma para a esquerda */
+    
+    z-index: 3; /* Camada mais alta (topo) */
+    /* Não precisa de rotate, ela fica reta */
+}
+
+
+.galeria_personal_chefe figure:hover .image_1_personal_chefe {
+     transform: rotate(-20deg) scale(1.05); 
+}
+.galeria_personal_chefe figure:hover .image_2_personal_chefe {
+     transform: rotate(20deg) scale(1.05);
+}
+.galeria_personal_chefe figure:hover .image_3_personal_chefe {
+     transform: translateX(-50%) scale(1.1); 
+     z-index: 10; 
+}
+
+
+.sobre_personal_chefe {
+   display: flex;
+
+   flex-direction: column;
+   padding-top: 50px;
+   align-items: baseline;
+}
+
+.segunda_section {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 50px;
+}
+
+.acao_personal_chefe {
+    padding-top: 30px;
+    position: relative;
+    height: 200px; 
+}
+
+.acao_personal_chefe p, .sobre_personal_chefe p {
+    text-align: justify;
+}
+
+.foto_acao_personal_chefe {
+    display: grid;
+    place-items: center;
+    padding: 0px 50px;
+}
+
+.foto_acao_personal_chefe img {
+    border-radius: 20px;
+}
+.informacoes_personal_chefe {
+    display: flex;
+
+    flex-direction: column;
+    padding: 0px 50px;
+    gap: 10px;
+}
+
+.sessao_planos_personal_chefe {
+
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    text-align: center;
+}
+
+.planos_personal_chefe {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px 0;
+    place-items: center;
+    
+}
+
+.planos {
+    border-radius: 10px;
+    background-color: #8f999e;
+    width: 350px;
+    height: 550px;
+    text-align: center;
+    color: white;
+
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+ p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contrate_personal_chefe_abaixo {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: end;
+}
+
+
+.contrate_pelo_whatsapp {
+    margin-top: 1rem;
+    border-radius: 12px;
+    border: 1px solid green;
+    padding: 16px;
+    background-color: green;
+    color: white;
+}
+
+.contrate_pelo_whatsapp{
+    text-decoration: none; /* Remove sublinhado */
+    color: inherit; /* Herda a cor do elemento pai */
+}
+
+.telefone_para_contato {
+    text-decoration:underline;
+}

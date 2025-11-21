@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main>
+<section class="pg_personal_chefe">
         <section class="primeira_section">
 
              <section class="galeria_personal_chefe">
 
-                <img class="image_1_personal_chefe" src="/public/images/pg_personal_chefe_images/image1.jpg" alt="Chef na cozinha" width="150px">
-                <img class="image_2_personal_chefe" src="/public/images/pg_personal_chefe_images/image2.jpg" alt="Chef preparando ingredientes" width="150px">
-                <img class="image_3_personal_chefe" src="/public/images/pg_personal_chefe_images/image3.jpg" alt="Close de uma marmita saudável" width="150px">
+                <figure>
+                     <img class="image_1_personal_chefe" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image1.jpg" alt="Chef na cozinha">
+                    <img class="image_2_personal_chefe" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image2.jpg" alt="Chef preparando ingredientes">
+                    <img class="image_3_personal_chefe" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image3.jpg" alt="Close de uma marmita saudável">
+                </figure>
+               
 
              </section>
 
@@ -38,45 +32,45 @@
                 <h2>Como funciona ?</h2>
                 <br>
                 <p>
-                    Em resumo, ele:
-                    Cria o Cardápio: Desenvolve refeições ou jantares sob medida.Faz as Compras: Seleciona e compra todos os ingredientes frescos.Prepara a Comida: Cozinha no local, garantindo frescor e qualidade.Organiza a Rotina: Muitas vezes, prepara um lote de marmitas prontas para a semana, organiza e higieniza a cozinha antes de ir embora.
+                    Em resumo, ela:
+                    Cria o cardápio: Desenvolve refeições ou jantares sob medida. Faz as compras ou seleciona todos os ingredientes necessários. Prepara a Comida: Cozinha no local, garantindo frescor e qualidade.Organiza a Rotina: Muitas vezes, prepara um lote de marmitas prontas para a semana, organiza e higieniza a cozinha antes de ir embora.
                     É o serviço ideal para quem busca ter uma alimentação de alta qualidade, saborosa e prática, sem ter que se preocupar com nenhuma etapa do preparo.
                 </p>
 
             </section>
 
             <section class="foto_acao_personal_chefe">
-                <img src="/public/images/pg_personal_chefe_images/image4.jpg" alt="" width="400px" height="250px">
+                <img src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/como_funciona_personal_chefe.jpg" alt="" width="440px" height="300px" >
             </section>
         </section>
 
         <section class="informacoes_personal_chefe">
 
             <h2>Adicionais Disponíveis para Todos os Planos</h2>
-            <br>
+            
             <p>
                 <b>Preparo adicional →</b> R$ 75,00 (Consultar quantidade máxima de acordo com o plano)
                 Serviço de compras dos insumos necessários, com apresentação das notas fiscaais para reembolso → R$ 220,00
             </p>
-             <br>
+             
             <h2>Condições do Agendamento</h2>
-             <br>
+             
             <p>
                 Realize o depósito de R$ 150,00 para reservar a data escolhida. Esse valor será abatido no dia do seu atendimento.
                 Caso precise, poderá reagendar seu atendimento. Para isso, peço a gentileza que avise com  5 dias de antecedência.
                 <b>Para alterações após esse prazo, o valor não será reessarcido.</b>
             </p>
-             <br>
+             
             <h2>Opções de pagamento</h2>
-             <br>
+            
             <p>
                 Podem ser feitos em dinheiro, pix ou transferência bancária
             </p>
 
             <h4>Consultar taxa de deslocamento, informando o Cep para o atendimento</h4>
             <h4>Contato Para Agendamento e Duvidas</h4>
-            <br>
-            <a class="contrate_pelo_whatsapp" href="https://wa.me/5511940367571" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            
+            <a class="telefone_para_contato" href="https://wa.me/5511940367571" target="_blank" rel="noopener noreferrer">WhatsApp para Contato: (+55) 11 940367571</a>
 
         </section>
 
@@ -87,83 +81,75 @@
 
                 <div class="planos plano_coviniencia">
 
-                    <h3>Coviniência  → R$ 350,00</h3>
+                    <h3>Coviniência →R$ 350,00</h3>
                     <p>
                         <b>5 preparos</b>
-                        (sendo 3 proteínas e 2 acompanhamentos)
-                        <br>
-                        <br>
-                        Rendimento médio de 15 a 20 marmitinhas de 500ml no total do atendimento
-                        <br>
-                        <br>
-                        Mais de 50 opções de escolha
-                        <br>
-                        <br>
+                        (sendo 3 proteínas e 2 acompanhamentos) <br>
+                        Rendimento médio de 15 a 20 marmitinhas de 500ml no total do atendimento <br>
+                        Mais de 50 opções de escolha <br>
                         Organização dos preparos, porcionamento e Identificação
-                        <br>
-                        <br>
                         Limpeza dos utensilios e locais utilizados
-                        <br>
-                        <br>
-                        <b>Atenção:</b> O rendimento informado pode sofrer alterações,<br> caso não sejam seguidas as indicações de quantidades da lista de compras
+                        <br><br>
+                        <b>Atenção:</b> O rendimento informado pode sofrer alterações,caso não sejam seguidas as indicações de quantidades da lista de compras
                     </p>
-                    <br>
-                    <br>
-                    <a class="contrate_pelo_whatsapp" href="">Contrate Pelo WhatsApp</a>
 
+                    <div class="contrate_personal_chefe_abaixo">
+                        <a class="contrate_pelo_whatsapp" href="">
+                            <b>Contrate Pelo WhatsApp</b>
+                        </a>
+                    </div>
+                    
                 </div>
 
                 <div class="planos plano_padrao">
 
-                    <h3>Padrão  → R$ 475,00</h3>
+                    <h3>Padrão  →R$ 475,00</h3>
                     <p>
                         <b>7 preparos</b>
-                        (Livre escolha)
-                        <br>
-                        <br>
+                        (Livre escolha) <br><br>
                         Rendimento médio de  35 a 45 marmitinhas de 500ml no total do atendimento
-                        <br>
                         <br>
                         Mais de 80 opções de escolha
                         <br>
-                        <br>
                         Organização dos preparos, porcionamento e Identificação
                         <br>
-                        <br>
                         Limpeza dos utensilios e locais utilizados
-                        <br>
-                        <br>
-                        <b>Atenção:</b> O rendimento informado pode sofrer alterações,<br> caso não sejam seguidas as indicações de quantidades da lista de compras
+                        <br><br>
+                        <b>Atenção:</b> O rendimento informado pode sofrer alterações,caso não sejam seguidas as indicações de quantidades da lista de compras
                     </p>
-                    <br>
-                    <br>
-                    <a class="contrate_pelo_whatsapp" href="">Contrate Pelo WhatsApp</a>
+
+                    <div class="contrate_personal_chefe_abaixo">
+                        <a class="contrate_pelo_whatsapp" href="">
+                            <b>Contrate Pelo WhatsApp</b>
+                        </a>
+                    </div>
+
                 </div>
 
                 <div class="planos plano_premium">
-                    <h3>Premium  → R$ 630,00</h3>
+                    <h3>Premium  →R$ 630,00</h3>
                     <p>
                         <b>9 preparos</b>
                         (Livre escolha)
-                        <br>
-                        <br>
+                        <br><br>
                         Rendimento médio de 50 a 55 marmitinhas de 500ml no total do atendimento
                         <br>
-                        <br>
                         Mais de 80 opções de escolha                   
-                        <br>
-                        <br>
+                       <br>
                         Organização dos preparos, porcionamento e Identificação
-                        <br>
                         <br>
                         Limpeza dos utensilios e locais utilizados
                         <br>
                         <br>
-                        <b>Atenção:</b> O rendimento informado pode sofrer alterações,<br> caso não sejam seguidas as indicações de quantidades da lista de compras
+                        <b>Atenção:</b> O rendimento informado pode sofrer alterações,caso não sejam seguidas as indicações de quantidades da lista de compras
                     </p>
-                    <br>
-                    <br>
-                    <a class="contrate_pelo_whatsapp" href="">Contrate Pelo WhatsApp</a>
+                   
+                     <div class="contrate_personal_chefe_abaixo">
+                        <a class="contrate_pelo_whatsapp" href="">
+                            <b>Contrate Pelo WhatsApp</b>
+                        </a>
+                    </div>
+
                 </div>
 
                 <div class="planos plano_personalizado">
@@ -172,31 +158,30 @@
                         <b>Preparos personalizados</b>
                         (sendo 3 proteínas e 2 acompanhamentos)
                         <br>
-                        <br>
                         Rendimento médio de x(personalizado) marmitinhas de 500ml no total do atendimento
-                        <br>
-                        <br>
                         Mais de 50 opções de escolha                   
-                        <br>
                         <br>
                         Organização dos preparos, porcionamento e Identificação
                         <br>
-                        <br>
                         Limpeza dos utensilios e locais utilizados
                         <br>
-                        <br>
-                        <b>Atenção:</b> O rendimento informado pode sofrer alterações,<br> caso não sejam seguidas as indicações de quantidades da lista de compras
+                        <b>Atenção:</b> O rendimento informado pode sofrer alterações,caso não sejam seguidas as indicações de quantidades da lista de compras
                     </p>
 
-                    <br><br>
-                    <a class="contrate_pelo_whatsapp" href="">Contrate Pelo WhatsApp</a>
+                     <div class="card_maior  contrate_personal_chefe_abaixo">
+                        <a class="contrate_pelo_whatsapp" href="">
+                            <b>Contrate Pelo WhatsApp</b>
+                        </a>
+                    </div>
+
                 </div>
 
             </section>
 
         </section>
+</section>
        
+        <?php
+            require __DIR__ .'/../partials/avaliacoes.php';
+        ?>
 
-    </main>
-</body>
-</html>
