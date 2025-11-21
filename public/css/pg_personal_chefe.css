@@ -166,6 +166,14 @@
     line-height: 1.6;
 }
 
+.contrate_personal_chefe_abaixo {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: end;
+}
+
 
 .contrate_pelo_whatsapp {
     margin-top: 1rem;

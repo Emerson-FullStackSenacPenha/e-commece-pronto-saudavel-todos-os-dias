@@ -81,27 +81,32 @@
 
                 <div class="planos plano_coviniencia">
 
-                    <h3>Coviniência  → R$ 350,00</h3>
+                    <h3>Coviniência →R$ 350,00</h3>
                     <p>
                         <b>5 preparos</b>
                         (sendo 3 proteínas e 2 acompanhamentos) <br>
                         Rendimento médio de 15 a 20 marmitinhas de 500ml no total do atendimento <br>
                         Mais de 50 opções de escolha <br>
-                        Organização dos preparos, porcionamento e Identificação <br>
+                        Organização dos preparos, porcionamento e Identificação
                         Limpeza dos utensilios e locais utilizados
                         <br><br>
                         <b>Atenção:</b> O rendimento informado pode sofrer alterações,caso não sejam seguidas as indicações de quantidades da lista de compras
                     </p>
-                    <a class="contrate_pelo_whatsapp" href=""><b>Contrate Pelo WhatsApp</b></a>
 
+                    <div class="contrate_personal_chefe_abaixo">
+                        <a class="contrate_pelo_whatsapp" href="">
+                            <b>Contrate Pelo WhatsApp</b>
+                        </a>
+                    </div>
+                    
                 </div>
 
                 <div class="planos plano_padrao">
 
-                    <h3>Padrão  → R$ 475,00</h3>
+                    <h3>Padrão  →R$ 475,00</h3>
                     <p>
                         <b>7 preparos</b>
-                        (Livre escolha) <br>
+                        (Livre escolha) <br><br>
                         Rendimento médio de  35 a 45 marmitinhas de 500ml no total do atendimento
                         <br>
                         Mais de 80 opções de escolha
@@ -112,16 +117,21 @@
                         <br><br>
                         <b>Atenção:</b> O rendimento informado pode sofrer alterações,caso não sejam seguidas as indicações de quantidades da lista de compras
                     </p>
-                  
-                    <a class="contrate_pelo_whatsapp" href=""><b>Contrate Pelo WhatsApp</b></a>
+
+                    <div class="contrate_personal_chefe_abaixo">
+                        <a class="contrate_pelo_whatsapp" href="">
+                            <b>Contrate Pelo WhatsApp</b>
+                        </a>
+                    </div>
+
                 </div>
 
                 <div class="planos plano_premium">
-                    <h3>Premium  → R$ 630,00</h3>
+                    <h3>Premium  →R$ 630,00</h3>
                     <p>
                         <b>9 preparos</b>
                         (Livre escolha)
-                        <br>
+                        <br><br>
                         Rendimento médio de 50 a 55 marmitinhas de 500ml no total do atendimento
                         <br>
                         Mais de 80 opções de escolha                   
@@ -134,7 +144,12 @@
                         <b>Atenção:</b> O rendimento informado pode sofrer alterações,caso não sejam seguidas as indicações de quantidades da lista de compras
                     </p>
                    
-                    <a class="contrate_pelo_whatsapp" href=""><b>Contrate Pelo WhatsApp</b></a>
+                     <div class="contrate_personal_chefe_abaixo">
+                        <a class="contrate_pelo_whatsapp" href="">
+                            <b>Contrate Pelo WhatsApp</b>
+                        </a>
+                    </div>
+
                 </div>
 
                 <div class="planos plano_personalizado">
@@ -144,7 +159,6 @@
                         (sendo 3 proteínas e 2 acompanhamentos)
                         <br>
                         Rendimento médio de x(personalizado) marmitinhas de 500ml no total do atendimento
-                        <br>
                         Mais de 50 opções de escolha                   
                         <br>
                         Organização dos preparos, porcionamento e Identificação
@@ -154,7 +168,12 @@
                         <b>Atenção:</b> O rendimento informado pode sofrer alterações,caso não sejam seguidas as indicações de quantidades da lista de compras
                     </p>
 
-                    <a class="contrate_pelo_whatsapp" href=""><b>Contrate Pelo WhatsApp</b></a>
+                     <div class="card_maior  contrate_personal_chefe_abaixo">
+                        <a class="contrate_pelo_whatsapp" href="">
+                            <b>Contrate Pelo WhatsApp</b>
+                        </a>
+                    </div>
+
                 </div>
 
             </section>
