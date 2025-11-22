@@ -40,7 +40,7 @@
             </section>
 
             <section class="foto_acao_personal_chefe">
-                <img src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/como_funciona_personal_chefe.jpg" alt="" width="440px" height="300px" >
+                <img src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/como_funciona_personal_chefe.jpg" alt="">
             </section>
         </section>
 
@@ -75,7 +75,7 @@
         </section>
 
         <section class="sessao_planos_personal_chefe">
-            <div><h2>Planos de Atendimento Personal Chefe</h2></div>
+            <div class="cabecalho_planos"><h2>Planos de Atendimento Personal Chefe</h2></div>
 
             <section class="planos_personal_chefe">
 

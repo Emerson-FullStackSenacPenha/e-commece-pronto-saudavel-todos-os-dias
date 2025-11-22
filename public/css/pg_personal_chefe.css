@@ -11,7 +11,6 @@
     gap: 50px;
     padding-top: 160px; 
     
-    /* Garante que a cor de fundo preencha tudo, se houver */
     min-height: 100vh; 
     box-sizing: border-box;
 }
@@ -28,12 +27,11 @@
 
 .galeria_personal_chefe figure {
     position: relative;
-    width: 100%;
+    
     max-width: 450px;
     height: 350px;    
-    margin: 40px auto 0px auto; /* Centraliza a galeria na página e dá um respiro */
-    /* Borda de depuração - remova depois se quiser ver a área do container */
-    /* border: 1px dashed red; */ 
+    margin: 40px auto 0px auto; 
+    width: 90%;
 }
 
 .galeria_personal_chefe figure img {
@@ -46,30 +44,28 @@
     border: 3px solid white; 
 }
 
-/* --- Posicionamento Individual de Cada Foto --- */
 .image_1_personal_chefe {
-    top: 40px;  /* Empurra um pouco para baixo */
-    left: 20px; /* Encosta na esquerda */
-    z-index: 1; /* Camada mais baixa (fundo) */
-    transform: rotate(-15deg); /* Gira para a esquerda */
+    top: 40px;  
+    left: 20px; 
+    z-index: 1; 
+    transform: rotate(-15deg); 
 }
 
 .image_2_personal_chefe {
-    top: 40px;   /* Na mesma altura da imagem 1 */
-    right: 20px; /* Encosta na direita */
-    z-index: 2;  /* Camada do meio (acima da imagem 1) */
-    transform: rotate(15deg); /* Gira para a direita */
+    top: 40px;   
+    right: 20px; 
+    z-index: 2;  
+    transform: rotate(15deg); 
 }
 
 
 .image_3_personal_chefe {
-    top: 0; /* Fica mais para cima que as outras */
-    /* Truque para centralizar absolutamente: */
+    top: 0; 
+   
     left: 50%; 
-    transform: translateX(-50%); /* Move 50% dela mesma para a esquerda */
+    transform: translateX(-50%);
     
-    z-index: 3; /* Camada mais alta (topo) */
-    /* Não precisa de rotate, ela fica reta */
+    z-index: 3; 
 }
 
 
@@ -100,6 +96,16 @@
     padding: 0px 50px;
 }
 
+.foto_acao_personal_chefe img {
+  
+    width: 100%;       
+    max-width: 440px;   
+    height: auto;       
+    object-fit: cover; 
+    
+    display: block;
+    margin: 0 auto;
+}
 .acao_personal_chefe {
     padding-top: 30px;
     position: relative;
@@ -185,10 +191,168 @@
 }
 
 .contrate_pelo_whatsapp{
-    text-decoration: none; /* Remove sublinhado */
-    color: inherit; /* Herda a cor do elemento pai */
+    text-decoration: none; 
+    color: inherit; 
+
 }
 
 .telefone_para_contato {
     text-decoration:underline;
 }
+
+@media (max-width: 1024px) {
+    
+    .segunda_section {
+       
+        grid-template-rows: auto auto; 
+        
+        gap: 50px; 
+    }
+
+    .acao_personal_chefe {
+  
+        height: auto; 
+        
+        padding-bottom: 20px; 
+        
+        position: relative; 
+    }
+    
+    
+    .foto_acao_personal_chefe {
+        height: auto;
+        display: flex;
+        align-items: center; 
+    }
+}
+
+@media (max-width: 458px) {
+
+    .pg_personal_chefe {
+
+        display: grid;
+
+        place-items: center;
+    }
+    .primeira_section {
+       
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+    }
+
+    .galeria_personal_chefe {
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .segunda_section {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 2.4fr 1fr;
+
+    }
+
+    .planos_personal_chefe {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .primeira_section {
+        grid-template-columns: 1fr; 
+        padding: 0 20px; 
+        gap: 40px; 
+    }
+
+    
+    .galeria_personal_chefe figure {
+        height: 280px; 
+        margin-top: 0;
+    }
+
+    .galeria_personal_chefe figure img {
+        width: 140px; 
+        border-width: 2px; 
+    }
+
+    
+    .image_1_personal_chefe {
+        top: 30px;
+        left: 10px; 
+    }
+
+    .image_2_personal_chefe {
+        top: 30px;
+        right: 10px; 
+    }
+
+    .image_3_personal_chefe {
+        top: 0;
+        
+    }
+
+    .pg_personal_chefe {
+        padding-top: 100px; 
+        gap: 30px;
+    }
+
+    .segunda_section {
+        padding: 0 20px; 
+    }
+
+    .planos {
+        width: 100%; 
+        max-width: 350px; 
+        height: auto; 
+        min-height: 500px;
+    }
+
+    .cabecalho_planos {
+        height: 100px;
+    }
+
+    .sessao_planos_personal_chefe {
+
+        grid-template-rows: 1fr 20fr;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .segunda_section {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 3.8fr 1fr;
+
+    }
+
+    .galeria_personal_chefe figure {
+        height: 240px; 
+        margin-top: 0;
+    }
+
+    .galeria_personal_chefe figure img {
+        width: 120px; 
+        border-width: 2px; 
+    }
+
+    
+    .image_1_personal_chefe {
+        top: 24px;
+        left: 8px; 
+    }
+
+    .image_2_personal_chefe {
+        top: 24px;
+        right: 8px; 
+    }
+
+    .image_3_personal_chefe {
+        top: 0;
+        
+    }
+}
+
