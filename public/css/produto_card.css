@@ -6,6 +6,12 @@
     --cor-borda-preta: black;
 }
 
+.product-card a {
+     text-decoration: none; 
+     color: inherit;
+}
+
+
 /* O Card */
 .product-card {
 

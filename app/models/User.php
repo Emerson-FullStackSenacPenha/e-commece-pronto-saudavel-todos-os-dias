@@ -77,13 +77,19 @@ function realizarLogin($conexao,$email,$senha){
             //Se tudo for bem sucedido, retorna um true para a função, vai ser usado para liberar o login.
             return true;
         } else {
-            //Retorna uma mensagem ao usuário.
-            return "Email e/ou senha inválidos!";
+
+            $mensagem = "Email ou senha inválidos!";
+            echo "<script>alert('$mensagem'); window.history.back();</script>";
+            exit; // Encerra o script PHP para garantir que nada mais seja processado
+
         }
         // caso falhe o try
     } catch (Exception $e) {
-        //retorne para o adm.
-        return "Erro ao tentar fazer login: " . $e->getMessage();
+        
+        $mensagem = "Erro ao tentar fazer login: " . $e->getMessage();
+        echo "<script>alert('$mensagem'); window.history.back();</script>";
+        exit; // Encerra o script PHP
+
     }
 
 }

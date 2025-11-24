@@ -33,15 +33,6 @@
       text-decoration: underline;
   }
 
-  .icon-local {
-      background-color: #fff;
-      color: #000;
-      border-radius: 8px;
-      padding: 6px 10px;
-      font-size: 18px;
-      display: inline-block;
-      margin-top: 6px;
-  }
 
   .pagamento {
       background-color: #f8f8f8;
@@ -70,4 +61,20 @@
       border-radius: 5px;
       padding: 4px;
       border: 1px solid #ccc;
+  }
+
+
+  @media (max-width: 458px) {
+
+    #footer {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+        place-items: center;
+    }
+
+    .bloco-footer {
+        text-align: center;
+    }
   }
