@@ -16,7 +16,7 @@ main {
     gap: 40px;
     max-width: 1200px;
     margin: 130px auto 40px auto;
-    align-items: center; 
+    align-items: start; 
 }
 
 
