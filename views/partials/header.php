@@ -37,7 +37,7 @@
             <ul id="lista_icons">
 
                 <li>
-                    <a href="">
+                    <a href="<?= $baseUrl ?>/public/index.php?page=personalChefe">
                         <div id="chefinho"></div>
                     </a>
                 </li>
@@ -149,7 +149,7 @@
                     <ul class="lista_hamburguer">
 
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=home">Inicio</a></li>
-                        <li><a href="">Personal Chefe</a></li>
+                        <li><a href="<?= $baseUrl ?>/public/index.php?page=personalChefe">Personal Chefe</a></li>
                         <li><a href="">Entregas</a></li>
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=carrinho_de_compras">Carrinho de Compras</a></li>
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a></li>
