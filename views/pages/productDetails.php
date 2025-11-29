@@ -1,7 +1,29 @@
 <?php
-$nomeProduto = "Marmita LowCarb";
-$preco = "R$ 205,00";
-$imagem = $baseUrl . "/public/images/products/marmita_carne.jpg"
+    require_once __DIR__ . '/../../app/core/DataBaseConecta.php'; 
+    require_once __DIR__ . '/../../app/Controllers/Admin/ProductAdminController.php';
+    global $baseUrl;
+
+    $id = $_GET['id'] ?? null; 
+    $produto = null;
+    if ($id) {
+         $produto = buscarProdutoPorId($conexao, $id);
+    }
+
+
+    if (!$produto) {
+        echo "<div style='text-align: center; padding: 50px;'>";
+        echo "<h2>Ops! Produto não encontrado.</h2>";
+        echo "<p>Verifique se o link está correto.</p>";
+        echo "<a href='$baseUrl/public/index.php?page=produtos' style='color: blue; text-decoration: underline;'>Voltar para produtos</a>";
+        echo "</div>";
+        return; 
+    }
+
+// 5. SE CHEGOU AQUI, O PRODUTO EXISTE. PREPARA A IMAGEM.
+    $imagemUrl = (!empty($produto['imagem_url'])) 
+    ? $baseUrl . $produto['imagem_url'] 
+    : $baseUrl . '/public/images/sem-imagem.png';
+    
 ?>
 
  
@@ -9,7 +31,7 @@ $imagem = $baseUrl . "/public/images/products/marmita_carne.jpg"
  
     <div class="lado-esquerdo">
  
-      <img src="<?php echo $imagem; ?>" alt="<?php echo $nomeProduto; ?>" class="foto">
+      <img src="<?= $imagemUrl ?>" alt="foto <?= $produto['nome']; ?>" class="foto">
  
       <div class="descricao">
         <span class="subtitulo">Descrição:</span>
@@ -37,7 +59,7 @@ $imagem = $baseUrl . "/public/images/products/marmita_carne.jpg"
  
     <div class="info">
  
-      <div class="titulo"><?php echo $nomeProduto; ?></div>
+      <div class="titulo"><?= $produto['nome'] ?></div>
  
       <div class="bloco-opcao">
  
@@ -80,7 +102,7 @@ $imagem = $baseUrl . "/public/images/products/marmita_carne.jpg"
  
       </div>
  
-      <div class="preco"><?php echo $preco; ?></div>
+      <div class="preco"><?= $produto['valor']; ?></div>
  
       <div class="comprar">
  

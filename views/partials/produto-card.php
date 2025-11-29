@@ -4,7 +4,7 @@
 ?>
 <article class="product-card">
 
-    <a href="<?= $baseUrl ?>/public/index.php?page=productDetails">
+    <a href="<?= $baseUrl ?>/public/index.php?page=productDetails&id=<?= $produto['id']?>">
         <figure class="product-card__figure">
             <img class="product-card__image"
                 src="<?= htmlspecialchars($produto['imagem_url']) ?>" 
