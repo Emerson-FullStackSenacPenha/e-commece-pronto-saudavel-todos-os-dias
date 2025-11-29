@@ -62,3 +62,19 @@
       padding: 4px;
       border: 1px solid #ccc;
   }
+
+
+  @media (max-width: 458px) {
+
+    #footer {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+        place-items: center;
+    }
+
+    .bloco-footer {
+        text-align: center;
+    }
+  }
