@@ -23,7 +23,8 @@ if ($action === 'gerenciar_carrinho') {
         'produtos' => VIEWS_PATH . '/pages/produtos.php',
         'carrinho_de_compras' => VIEWS_PATH . '/pages/carrinho_de_compras.php',
         'productDetails' => VIEWS_PATH . '/pages/productDetails.php',
-        'personalChefe' => VIEWS_PATH . '/pages/personal_chefe.php'
+        'personalChefe' => VIEWS_PATH . '/pages/personal_chefe.php',
+        'about' => VIEWS_PATH . '/pages/about.php'
         // Adicione as outras páginas aqui
     
     ];

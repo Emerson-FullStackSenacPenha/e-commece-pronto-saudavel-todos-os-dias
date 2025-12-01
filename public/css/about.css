@@ -1,0 +1,305 @@
+.sobre_pg{
+    display: grid;
+
+    gap: 50px;
+    padding-top: 160px; 
+    
+    min-height: 100vh; 
+    box-sizing: border-box;
+
+    
+    place-items: center;
+    
+}
+
+.sessao_ponto_saudavel{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0px 50px 0 0;
+    max-width: 1600px;
+}
+
+.area_foto_sobre figure{
+
+    max-width: 450px;   
+    margin: 40px auto 0px auto; 
+    width: 90%;
+
+}
+.area_foto_sobre figure img{ 
+
+    width: 350px;      
+    height: auto;       
+    border-radius: 6px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+    transition: all 0.3s ease; 
+    border: 1px solid white; 
+
+}
+
+.sobre_ponto_saudavel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 5%;
+    gap: 40px;
+    flex-wrap: wrap;
+  
+}
+
+
+.sobre_ponto_saudavel h2 {
+    margin-top: 30px;
+    font-size: 2rem;
+    font-weight: 700; 
+}
+.sobre_ponto_saudavel p {
+    font-size: 1.3em;
+    margin-top: -40px;
+    padding: 0;
+    text-align: center;
+}
+
+/* ////////////////////////////////// */
+
+.sessao_sobre_produtos{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    max-width: 1600px;
+    justify-items: center;
+}
+
+.sobre_produtos_texto{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  
+}
+.sobre_produtos_texto h2{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    align-self: center;
+}
+.sobre_produtos_texto p{
+    font-size: 1.3rem;
+    margin-top: -40px;
+    padding: 10px;
+    text-align: center;
+}
+
+.foto_sobre_produto figure{
+    max-width: 450px;   
+    margin: 40px 50px 0px auto; 
+    width: 90%;
+}
+.foto_sobre_produto figure img{
+    width: 350px;      
+    height: auto;       
+    border-radius: 6px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+    transition: all 0.3s ease; 
+    border: 1px solid white; 
+}
+
+/* ///////////// */
+
+.sobre_personal_chef{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0px 50px 0 0;
+    max-width: 1600px;
+    position: relative;
+    margin: 40px;
+}
+
+.botao-contrate {
+    background-color: #4B9C1F;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); 
+    position: absolute;
+    bottom: 80px;
+    right: 10%;
+}
+
+.botao-contrate:hover {
+    background-color: #39923e;
+}
+
+.galeria_sobre_pf{
+    position: relative;
+    width: 500px; 
+    height: 700px; 
+}
+.galeria_sobre_pf figure{
+    max-width: 220px;   
+    margin: 40px auto 0px auto; 
+    width: 90%;
+}
+.galeria_sobre_pf figure img{
+    width: 220px;      
+    height: auto;       
+    border-radius: 6px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+    transition: all 0.3s ease; 
+    border: 1px solid white; 
+}
+
+.img_1_sobre_pf{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 1;
+} 
+ .img_2_sobre_pf{
+    position: absolute;
+    top: 35%; 
+    right: 90px; 
+    z-index: 0;
+} 
+ .img_3_sobre_pf{
+    position: absolute;
+    bottom: 8%;
+    left: 5%;
+    z-index: 1;
+} 
+
+.conteudo_sobre_pf{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  
+    padding: 0 20px;
+}
+
+.conteudo_sobre_pf h2{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    align-self: end;
+    margin-bottom: 5%;
+}
+.conteudo_sobre_pf p{
+    font-size: 1.3rem;
+    text-align: center;
+
+}
+
+@media (max-width: 900px) {
+    
+    .sessao_ponto_saudavel,
+    .sessao_sobre_produtos,
+    .sobre_personal_chef {
+        display: flex; /* Muda de Grid para Flex */
+        flex-direction: column; /* Empilha o conteúdo */
+        text-align: center; /* Centraliza texto */
+        padding: 0 20px; /* Reduz padding lateral */
+    }
+    .sobre_personal_chef{
+        align-items: center;
+    }
+
+    /* Reordenar Produtos (Imagem em cima, texto em baixo no mobile) */
+    .sessao_sobre_produtos {
+        flex-direction: column-reverse; 
+        align-items: center;
+    }
+    .foto_sobre_produto figure{
+        padding: 20px;
+        margin: 0;
+    }
+
+
+    .sobre_produtos_texto p{
+        margin-top: 0;
+
+    }
+
+    .sobre_ponto_saudavel p,
+    .sobre_produtos_texto p,
+    .conteudo_sobre_pf p {
+        text-align: center; /* Texto centralizado em telas menores */
+    }
+    
+    .sobre_ponto_saudavel h2,
+    .sobre_produtos_texto h2,
+    .conteudo_sobre_pf h2 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    /* Ajuste da Galeria no Tablet */
+    .galeria_sobre_pf {
+        height: 700px; /* Altura menor */
+        margin-bottom: 40px;
+    }
+
+    /* Ajuste do botão no Tablet/Mobile */
+    .conteudo_sobre_pf {
+        align-items: center; /* Centraliza itens */
+        padding: 0;
+    }
+
+    .botao-contrate {
+        position: static; /* Remove position absolute */
+        margin-top: 20px; /* Adiciona margem superior */
+    }
+}
+
+/* Celulares (max-width: 600px) */
+@media (max-width: 600px) {
+    
+    .sobre_pg {
+        padding-top: 100px;
+        gap: 60px;
+    }
+
+    /* -- Ajuste Imagens Ponto Saudável e Produtos -- */
+    .area_foto_sobre figure img, 
+    .foto_sobre_produto figure img {
+        width: 280px; /* Imagens menores */
+    }
+    
+    .sobre_ponto_saudavel h2,
+    .sobre_produtos_texto h2,
+    .conteudo_sobre_pf h2 {
+        font-size: 1.6rem; /* Fonte do título menor */
+    }
+
+    .sobre_ponto_saudavel p,
+    .sobre_produtos_texto p,
+    .conteudo_sobre_pf p {
+        font-size: 1.1rem; /* Fonte do texto menor */
+    }
+
+    /* -- Ajuste Crítico da Galeria Personal Chef (Efeito Collage) -- */
+    .galeria_sobre_pf {
+        height: 450px; /* Altura bem menor */
+        width: 350px;
+    }
+
+    .galeria_sobre_pf figure img {
+        width: 190px; /* Imagens da colagem bem menores */
+    }
+
+    /* Reajuste das posições para caber na tela pequena */
+    .img_1_sobre_pf {
+        left: 5%;
+        top: 0;
+    }
+    .img_2_sobre_pf {
+        right: 5%;
+        top: 15%;
+    }
+    .img_3_sobre_pf {
+        left: 20%;
+        bottom: 0;
+    }
+}
