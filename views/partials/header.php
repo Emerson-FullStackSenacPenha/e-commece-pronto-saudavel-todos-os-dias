@@ -1,13 +1,13 @@
 <?php
-    // Certifique-se de que a sessão está iniciada em todas as páginas
-    if (session_status() !== PHP_SESSION_ACTIVE) {
-        session_start();
-    }
-    // Variável para verificar se o usuário está logado
-    $usuario_logado = isset($_SESSION["user_nome"]);
+// Certifique-se de que a sessão está iniciada em todas as páginas
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+// Variável para verificar se o usuário está logado
+$usuario_logado = isset($_SESSION["user_nome"]);
 
-    // Se estiver logado, armazene o nome para uso mais fácil
-    $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
+// Se estiver logado, armazene o nome para uso mais fácil
+$nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
 ?>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
@@ -22,7 +22,7 @@
 
             <!-- Logo -->
             <a id="logo" href="<?= $baseUrl ?>/public/index.php?page=home"></a>
-                
+
 
             <!-- Barra de pesquisa -->
             <div id="busca">
@@ -57,10 +57,10 @@
                 <li>
 
                     <?php if ($usuario_logado): ?>
-                        
-                            <a id="nome_logado" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logado.php">Olá, <?= htmlspecialchars($nome_usuario) ?></a>
-                            <a id="sair" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php" >Sair</a>
-                        
+
+                        <a id="nome_logado" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logado.php">Olá, <?= htmlspecialchars($nome_usuario) ?></a>
+                        <a id="sair" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php">Sair</a>
+
                     <?php else: ?>
                         <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php">
                             <div id="usuario"></div>
@@ -83,8 +83,29 @@
 
             <li><a href="<?= $baseUrl ?>/public/index.php?page=home">Inicio</a></li>
             <li><a href="<?= $baseUrl ?>/public/index.php?page=personalChefe">Personal Chefe</a></li>
-            <li><a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a></li>
-            <li>Outros Produtos</li>
+            <li class="marmitaSubmenu">
+                <a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a>
+
+                <ul class="submenuMarmita">
+                    <li><a href="#marmita-fit">Fitness</a></li>
+                    <li><a href="#marmita-vegan">Low Carb</a></li>
+                    <li><a href="#kits">Vegana</a></li>
+                </ul>
+
+            </li>
+            <li class="produtosSubmenu">
+                <a href="">Outros Produtos</a>
+
+                <ul class="submenuProdutos">
+                    <li><a href="">Caldo</a></li>
+                    <li><a href="">Temperos</a></li>
+                    <li><a href="">Torta</a></li>
+                    <li><a href="">Sopa</a></li>
+                    <li><a href="">Sobremesa</a></li>
+                    <li><a href="">Sucos</a></li>
+                </ul>
+
+            </li>
             <li>Quem Somos</li>
 
         </ul>
@@ -134,15 +155,15 @@
 
                     <ul class="lista_hamburguer">
 
-                        
+
 
                         <?php if ($usuario_logado): ?>
-                        <a href="#"> <span id="nome_usuario_logado">Olá, <?= htmlspecialchars($nome_usuario) ?></span> </a>
-                        <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php" class="btn">Sair</a>
-                    <?php else: ?>
-                        <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php">Entrar</a></li>
-                        <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/register.php">Cadastrar</a></li>
-                    <?php endif; ?>
+                            <a href="#"> <span id="nome_usuario_logado">Olá, <?= htmlspecialchars($nome_usuario) ?></span> </a>
+                            <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php" class="btn">Sair</a>
+                        <?php else: ?>
+                            <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php">Entrar</a></li>
+                            <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/register.php">Cadastrar</a></li>
+                        <?php endif; ?>
 
                     </ul>
                     <hr>

@@ -268,12 +268,86 @@ header{
     
 }
 
+
+
 #lista_nav a {
 
     text-decoration: none;
     font-family: var(--text);
     color: black;
+    padding: 0px 20px;
     
+}
+
+.submenuMarmita{
+
+    display: none;
+    background-color: #ffffff;
+    list-style: none;
+    text-align: left;
+    font-size: 1rem;
+    
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+
+    border-radius: 2px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.90);
+
+    width: 100%;
+
+
+}
+
+.marmitaSubmenu:hover .submenuMarmita {
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ 
+}
+
+.submenuProdutos{
+
+    display: none;
+    background-color: #ffffff;
+    list-style: none;
+    text-align: left;
+    font-size: 1rem;
+    
+    
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+
+    border-radius: 2px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.90);
+    
+
+    transition: opacity 0.3s, visibility 0.3s;
+
+}
+
+.produtosSubmenu:hover .submenuProdutos {
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ 
+}
+
+.submenuMarmita a:hover{
+
+    font-weight: 100;
+
+}
+
+.submenuProdutos a:hover{
+
+    font-weight: 100;
+
 }
 
 /* Menu Hamburguer */
