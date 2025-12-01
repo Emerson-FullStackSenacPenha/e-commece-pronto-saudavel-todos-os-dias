@@ -4,7 +4,7 @@
             <div class="area_foto_sobre">
 
                 <figure>
-                     <img class="" src="<?= $baseUrl ?>/public/images/sobre/sobre-1.jpg" alt="Chef na cozinha"> 
+                     <img class="img_area_sobre" src="<?= $baseUrl ?>/public/images/sobre/sobre-1.jpg" alt="Chef na cozinha"> 
                 </figure>
 
             </div>
@@ -34,7 +34,7 @@
 
             <div class="foto_sobre_produto">
                 <figure>
-                    <img src="<?= $baseUrl ?>/public/images/sobre/sobre-2.png" alt="">
+                    <img src="<?= $baseUrl ?>/public/images/sobre/sobre-2.png" alt="" class="img_area_produto">
                 </figure>
             </div>
         </section>
@@ -43,13 +43,9 @@
 
                 <div class="galeria_sobre_pf">
                     <figure>
-                        <img class="img_1_sobre_pf" src="<?= $baseUrl ?>/public/images/sobre/sobre-3.jpg" alt="Personal Chef na cozinha">
-                    </figure>
-                    <figure>
-                        <img class="img_2_sobre_pf" src="<?= $baseUrl ?>/public/images/sobre/sobre-4.jpg" alt="Personal Chef sorrindo na cozinha">
-                    </figure>
-                    <figure>
-                        <img class="img_3_sobre_pf" src="<?= $baseUrl ?>/public/images/sobre/sobre-5.jpg" alt="Prato de comida saudável">
+                        <img class="img_1_sobre_pf" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image1.jpg" alt="Personal Chef na cozinha">
+                        <img class="img_2_sobre_pf" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image3.jpg" alt="Personal Chef sorrindo na cozinha">
+                        <img class="img_3_sobre_pf" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image2.jpg" alt="Prato de comida saudável">
                     </figure>
                 </div>
                 
@@ -58,7 +54,6 @@
                     <p>
                         Um Personal Chef é um profissional da gastronomia que oferece um serviço de culinária totalmente personalizado, diretamente na casa do cliente ou em um local de evento privado.
                     </p>
-
                     <a href="" class="botao-contrate">Contrate</a>
                     
                 </div>
