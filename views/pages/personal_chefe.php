@@ -14,8 +14,7 @@
 
             <section class="sobre_personal_chefe">
 
-                <h2>O que é o Personal chefe?</h2>
-                <br>
+                <h2>O que é o serviço de Personal chefe?</h2>
                 <p>
                     Um Personal Chef é um profissional da gastronomia que oferece um serviço de culinária totalmente personalizado, geralmente na casa do cliente ou em um local de evento privado.
                     Diferente do chef de restaurante, o Personal Chef atua de forma exclusiva, adaptando todo o menu aos gostos, necessidades dietéticas (como dietas específicas, restrições ou alergias) e objetivos nutricionais do contratante.
@@ -30,7 +29,6 @@
             <section class="acao_personal_chefe">
 
                 <h2>Como funciona ?</h2>
-                <br>
                 <p>
                     Em resumo, ela:
                     Cria o cardápio: Desenvolve refeições ou jantares sob medida. Faz as compras ou seleciona todos os ingredientes necessários. Prepara a Comida: Cozinha no local, garantindo frescor e qualidade.Organiza a Rotina: Muitas vezes, prepara um lote de marmitas prontas para a semana, organiza e higieniza a cozinha antes de ir embora.
