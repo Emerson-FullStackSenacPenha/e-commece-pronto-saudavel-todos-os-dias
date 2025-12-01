@@ -21,6 +21,7 @@ function verificaLoginPaginaLogin(){
 }
 }
 
+
 //Só retorna o nome do usuário, para mostrar o nome do cliente dinamicamente.
 function usuarioNome() {
     return $_SESSION["user_nome"] ?? 'Usuário';
