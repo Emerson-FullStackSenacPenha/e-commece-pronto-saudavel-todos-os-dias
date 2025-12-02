@@ -132,23 +132,7 @@ main {
     border: 1px solid #ccc;
     font-size: 16px;
 }
- 
-.comprar button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 16px;
-    font-weight: bold;
-    flex: 1;
-}
- 
-.comprar button:hover {
-    background-color: #43a047;
-}
+
  
 .descricao {
     background-color: white;
@@ -172,6 +156,65 @@ main {
     line-height: 1.5;
     color: #555;
     font-size: 13px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+}
+
+.quantity-selector__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--cor-texto-secundario);
+    
+}
+
+.botao-comprar {
+
+    background-color: white;
+    color: var(--cor-primaria);
+    border: solid 1px var(--cor-primaria);
+    border-radius: 4px;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    transition: background-color 0.2s; 
+}
+
+.botao-comprar:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    border-color: var(--cor-primaria);
+    border: none;
+}
+
+
+.quantity-selector__input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid var(--cor-borda);
+    border-right: 1px solid var(--cor-borda);
+    padding: 0.5rem 0;
+    font-size: 1rem;
+
+    -moz-appearance: textfield;
+}
+
+.quantity-selector__input::-webkit-outer-spin-button,
+.quantity-selector__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
  

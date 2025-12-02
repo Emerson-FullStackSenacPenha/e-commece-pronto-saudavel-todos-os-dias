@@ -25,6 +25,12 @@ try {
             foreach ($produtos_do_banco as $p) {
                 $qtd_temp = $_SESSION['carrinho'][$p['id']];
                 $preco_temp = (float)($p['valor'] ?? 0);
+
+                if ($qtd_temp >= 10) {
+                    
+                    $preco_temp -= 2.00;
+                }
+                    
                 $total_carrinho += ($preco_temp * $qtd_temp);
             }
             
@@ -77,7 +83,10 @@ try {
                         $quantidade = $_SESSION['carrinho'][$produto['id']];
                         $preco = (float)($produto['valor'] ?? 0);
                         
-                       
+                        if ($quantidade >= 10) {
+                            $preco -= 2.00;
+                        }
+                    
                         $subtotal = $preco * $quantidade;
                         
                         
@@ -132,6 +141,11 @@ try {
                        
                         $quantidade = $_SESSION['carrinho'][$produto['id']];
                         $preco = (float)($produto['valor'] ?? 0);
+
+                        if ($quantidade >= 10) {
+                            $preco -= 2.00;
+                        }
+                    
                         $subtotal = $preco * $quantidade;
                         
                         $imagem_url = (!empty($produto['imagem_url']))
@@ -182,13 +196,24 @@ try {
 
             <div id="total-carrinho">
                 <form id="butaos" action="/caminho-para-gateway.php" method="POST">
+
                     <div id="botao-pagamento"><a href="<?= $baseUrl ?>/public/index.php?page=produtos">Adicionar +</a></div>
-                    <button type="submit" class="botao-pagamento">Finalizar</button>
+
+                    <?php if (!$carrinho_vazio): ?>
+                    <form id = 'botao-pagamento' method="post" action="<?= $baseUrl ?>/config/pagseguro_create_checkout.php">
+                        <input type="hidden" name="nome" value="<?= htmlspecialchars($usuario->nome ?? '') ?>">
+                        <input type="hidden" name="email" value="<?= htmlspecialchars($usuario->email ?? '') ?>">
+                        <button type="submit" class="botao-pagamento">Finalizar compra</button>
+                    </form>
+ 
+                    <?php else: ?>
+                        <p>Seu carrinho está vazio.</p>
+                    <?php endif; ?>
+
+             <?php endif; ?>
                 </form>
                 <h3>Total: R$ <?= number_format($total_carrinho, 2, ',', '.') ?></h3>
             </div>
-
-        <?php endif; ?>
 
     </section>
 

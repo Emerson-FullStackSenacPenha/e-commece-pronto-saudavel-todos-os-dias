@@ -57,27 +57,78 @@
             
             <h3 class="product-card__title"><?= htmlspecialchars($produto['nome']) ?></h3>
 
-            <p class="product-card__price">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
+            <p class="product-card__price preco-display">R$ <?= number_format($produto['preco'] * 5, 2, ',', '.') ?></p>
         </div>
-    </a>
+    </a> 
 
-    <div class="product-card__actions">
+    <div class="product-card__actions" data-preco-unitario="<?= $produto['preco'] ?>">
+        
         <form action="<?= $baseUrl ?>/public/index.php" method="POST">
             
+            <input type="hidden" name="action" value="gerenciar_carrinho">
+            <input type="hidden" name="acao_carrinho" value="adicionar"> 
             <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
             
-            <input type="hidden" name="action" value="gerenciar_carrinho">
-            
             <div class="quantity-selector">
-                <button class="quantity-selector__button" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
-                <input class="quantity-selector__input" type="number" name="quantidade" value="1" min="1" class="input-quantidade">
-                <button class="quantity-selector__button" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                <button class="quantity-selector__button" type="button" onclick="atualizarPrecoCard(this, -5)">-</button>
+                
+                <input class="quantity-selector__input input-quantidade" 
+                       type="number" 
+                       name="quantidade" 
+                       value="5" 
+                       min="5" 
+                       step="5" 
+                       readonly> 
+                
+                <button class="quantity-selector__button" type="button" onclick="atualizarPrecoCard(this, 5)">+</button>
             </div>
 
             <button type="submit" class="button button--primary">Adicionar</button>
             
         </form>
     </div>
+
+    <script>
+        function atualizarPrecoCard(botao, delta) {
+            // 1. Encontra os elementos vizinhos
+            const containerAcoes = botao.closest('.product-card__actions'); // A div onde guardamos o preço unitário
+            const card = botao.closest('.product-card'); // O card inteiro
+            const input = containerAcoes.querySelector('.input-quantidade');
+            const displayPreco = card.querySelector('.product-card__price'); // Onde mostra o valor
+            
+            // 2. Pega os valores atuais
+            let quantidade = parseInt(input.value);
+            let precoUnitario = parseFloat(containerAcoes.getAttribute('data-preco-unitario'));
+            
+            // 3. Calcula a nova quantidade
+            let novaQuantidade = quantidade + delta;
+            
+            // Validação: Não deixa baixar de 5 (seu mínimo)
+            if (novaQuantidade < 5) {
+                novaQuantidade = 5;
+            }
+            
+            // 4. Atualiza o Input
+            input.value = novaQuantidade;
+            
+            // 5. Calcula o Novo Preço Total
+           
+
+            if (novaQuantidade >= 10) {
+
+                precoUnitario -= 2.00
+            }
+
+             let novoTotal = precoUnitario * novaQuantidade;
+            
+            // 6. Atualiza o Texto na Tela (Formatando para Real R$)
+            displayPreco.innerText = novoTotal.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+    }
+    </script>
     
 </article>
+    
 

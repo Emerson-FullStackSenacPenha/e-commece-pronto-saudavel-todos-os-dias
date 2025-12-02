@@ -22,11 +22,8 @@
 }
 
 .personal_chefe {
-    
     display: grid;
-    
     grid-template-columns: 1fr 1.5fr; 
-    
     align-items: center;
 }
 
@@ -47,10 +44,14 @@
 .bloco_direito_informacoes {
     color: white;
     display: grid;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: auto auto;
     align-items: center;
+    justify-items: center;
+    align-content: center;
+    gap: 30px;
     height: 100%;
 }
+
 
 .informacoes {
     display: grid;
@@ -151,5 +152,45 @@
         padding: 12px 10px;
         font-size: 0.9rem;
         font-weight: bold;
+    }
+}
+
+
+
+/* RESPONSIVO (Desktop - 1300px ou mais)    */
+@media (min-width: 1300px) {
+    .informacoes {
+        font-size: 1.45rem; 
+        width: 65%;
+    }
+
+    .texto {
+        line-height: 1.5;
+        font-size: 1.2em; 
+    }
+
+    .botoes_personal_chefe {
+        height: 100px;
+        display: grid;
+        align-items: center;
+        font-size: 2.2em;
+        padding: 16px 20px;
+        max-width: 300px;
+    }
+
+    .botoes {
+        gap: 215px;
+    }
+
+    .imagem_personal_chefe img {
+        max-width: 900px; 
+        border-radius: 50px;
+        display: grid;
+        align-items: justify;
+
+    }
+
+    .cabecalho_personal_chefe {
+        font-size: 2em;
     }
 }
