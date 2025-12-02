@@ -289,6 +289,12 @@
 
 /* SESSÃO PERSONAL CHEFE  */
 
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 .sessao_personal_chefe_home {
     background-color: #12602C;
 
@@ -307,11 +313,8 @@
 }
 
 .personal_chefe {
-
     display: grid;
-
-    grid-template-columns: 1fr 1.5fr;
-
+    grid-template-columns: 1fr 1.5fr; 
     align-items: center;
 }
 
@@ -332,16 +335,20 @@
 .bloco_direito_informacoes {
     color: white;
     display: grid;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: auto auto;
     align-items: center;
+    justify-items: center;
+    align-content: center;
+    gap: 30px;
     height: 100%;
 }
+
 
 .informacoes {
     display: grid;
     align-items: center;
     width: 80%;
-    justify-self: center;
+    justify-self: center; 
 }
 
 .texto {
@@ -368,46 +375,114 @@
     font-weight: bold;
 }
 
+
+
 /* RESPONSIVO (Tablets - 1024px ou menos)  */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) { 
 
     .sessao_personal_chefe_home {
-        height: auto;
+        height: auto; 
         padding-bottom: 40px;
     }
 
     .personal_chefe {
         /* Layout empilhado JÁ em 1024px */
         grid-template-columns: 1fr;
-        padding: 40px 0;
+        padding: 40px 0; 
     }
 
     .imagem_personal_chefe img {
-        max-width: 420px;
+        max-width: 420px; 
     }
 
     .bloco_direito_informacoes {
-        grid-template-rows: auto auto;
-        gap: 40px;
-        justify-items: center;
-        margin-top: 30px;
+        grid-template-rows: auto auto; 
+        gap: 40px; 
+        justify-items: center; 
+        margin-top: 30px; 
     }
 
     .informacoes {
-        width: 80%;
-        text-align: center;
-        font-size: 1.1rem;
+        width: 80%; 
+        text-align: center; 
+        font-size: 1.1rem; 
     }
 
     .botoes {
         grid-template-columns: 1fr;
         gap: 20px;
         width: 100%;
-        padding: 0 20%;
+        padding: 0 20%; 
     }
 
     .botoes_personal_chefe {
-        max-width: 320px;
+        max-width: 320px; 
+    }
+}
+
+
+
+/* RESPONSIVO (Mobile - 768px ou menos)    */
+@media (max-width: 768px) {
+    
+    .imagem_personal_chefe img {
+        max-width: 320px; 
+    }
+
+    .informacoes {
+        width: 85%;
+        font-size: 1rem; 
+    }
+
+    .botoes {
+        padding: 0 15%; 
+        gap: 15px;
+    }
+
+    .botoes_personal_chefe {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+}
+
+
+
+/* RESPONSIVO (Desktop - 1300px ou mais)    */
+@media (min-width: 1300px) {
+    .informacoes {
+        font-size: 1.45rem; 
+        width: 65%;
+    }
+
+    .texto {
+        line-height: 1.5;
+        font-size: 0.8em; 
+    }
+
+    .botoes_personal_chefe {
+        height: 60px;
+        display: grid;
+        align-items: center;
+        font-size: 2.2em;
+        padding: 16px 20px;
+        max-width: 300px;
+    }
+
+    .botoes {
+        gap: 215px;
+    }
+
+    .imagem_personal_chefe img {
+        max-width: 900px; 
+        border-radius: 50px;
+        display: grid;
+        align-items: justify;
+
+    }
+
+    .cabecalho_personal_chefe {
+        font-size: 2em;
     }
 }
 
