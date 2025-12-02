@@ -22,11 +22,8 @@
 }
 
 .personal_chefe {
-    
     display: grid;
-    
     grid-template-columns: 1fr 1.5fr; 
-    
     align-items: center;
 }
 
@@ -47,8 +44,11 @@
 .bloco_direito_informacoes {
     color: white;
     display: grid;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: auto auto;
     align-items: center;
+    justify-items: center;
+    align-content: center;
+    gap: 30px;
     height: 100%;
 }
 
