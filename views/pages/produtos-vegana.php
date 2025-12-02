@@ -7,6 +7,11 @@ require_once __DIR__ . "/../partials/todos-produtos.php";
 
 <h2 class="titulo">Produtos Veganos</h2>
 
-<main class="product-grid">
-    <?php exibirProdutos($conexao, $template_card, $baseUrl, "veg"); ?>
-</main>
+<section>
+
+
+    <div class="product-grid">
+        <?php exibirProdutos($conexao, $template_card, $baseUrl, "veg"); ?>
+    </div>
+</section>
+

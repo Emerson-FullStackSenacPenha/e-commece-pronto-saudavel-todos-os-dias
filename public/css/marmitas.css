@@ -39,6 +39,9 @@ main.product-grid {
     margin-bottom: 100px;
 }
 
+.produtos_pronto_saudavel {
+    min-height: 71vh;
+}
 
 /* =========================== Responsividade =========================== */
 @media (max-width: 768px) {
