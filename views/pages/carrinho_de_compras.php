@@ -25,6 +25,12 @@ try {
             foreach ($produtos_do_banco as $p) {
                 $qtd_temp = $_SESSION['carrinho'][$p['id']];
                 $preco_temp = (float)($p['valor'] ?? 0);
+
+                if ($qtd_temp >= 10) {
+                    
+                    $preco_temp -= 2.00;
+                }
+                    
                 $total_carrinho += ($preco_temp * $qtd_temp);
             }
             
@@ -77,7 +83,10 @@ try {
                         $quantidade = $_SESSION['carrinho'][$produto['id']];
                         $preco = (float)($produto['valor'] ?? 0);
                         
-                       
+                        if ($quantidade >= 10) {
+                            $preco -= 2.00;
+                        }
+                    
                         $subtotal = $preco * $quantidade;
                         
                         
@@ -132,6 +141,11 @@ try {
                        
                         $quantidade = $_SESSION['carrinho'][$produto['id']];
                         $preco = (float)($produto['valor'] ?? 0);
+
+                        if ($quantidade >= 10) {
+                            $preco -= 2.00;
+                        }
+                    
                         $subtotal = $preco * $quantidade;
                         
                         $imagem_url = (!empty($produto['imagem_url']))
