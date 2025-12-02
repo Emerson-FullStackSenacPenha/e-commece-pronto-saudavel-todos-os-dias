@@ -9,8 +9,8 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         try {
-            $nome = trim($_POST['nome'] ?? '');
-            $descricao = trim($_POST['descricao'] ?? '');
+            $nome = trim(filter_var($_POST['nome'] ?? '',FILTER_SANITIZE_SPECIAL_CHARS));
+            $descricao = trim(filter_var($_POST['descricao'] ?? '',FILTER_SANITIZE_SPECIAL_CHARS));
             $valor = filter_input(INPUT_POST, 'valor', FILTER_VALIDATE_FLOAT);
             $estoque = filter_input(INPUT_POST, 'estoque', FILTER_VALIDATE_INT);
             
