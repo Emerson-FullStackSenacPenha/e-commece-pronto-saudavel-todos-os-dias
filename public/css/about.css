@@ -230,11 +230,16 @@
         display: flex; /* Muda de Grid para Flex */
         flex-direction: column; /* Empilha o conteúdo */
         text-align: center; /* Centraliza texto */
-        padding: 0 20px; /* Reduz padding lateral */
+        padding: 0; /* Reduz padding lateral */
     }
     .sobre_personal_chef{
         align-items: center;
         height: auto;
+    }
+    .area_foto_sobre{
+        display: flex;          
+        justify-content: center; 
+        width: 100%;
     }
 
     /* Reordenar Produtos (Imagem em cima, texto em baixo no mobile) */
@@ -245,6 +250,7 @@
     .foto_sobre_produto figure{
         padding: 20px;
         margin: 0;
+        width: 100%;
     }
 
 
@@ -313,28 +319,96 @@
 
     /* -- Ajuste Crítico da Galeria Personal Chef (Efeito Collage) -- */
     .galeria_sobre_pf {
-        height: 450px; /* Altura bem menor */
+        height: 320px; /* Altura bem menor */
         width: 350px;
     }
 
     .galeria_sobre_pf figure img {
-        width: 190px; /* Imagens da colagem bem menores */
+        width: 140px; /* Imagens da colagem bem menores */
     }
 
     /* Reajuste das posições para caber na tela pequena */
     .img_1_sobre_pf {
-        left: 5%;
-        top: 0;
+        top: 48px;
+        left: 6px; 
     }
     .img_2_sobre_pf {
-        right: 5%;
-        top: 15%;
+        top: 48px;
+        right: 6px; 
     }
     .img_3_sobre_pf {
-        left: 20%;
-        bottom: 0;
+        top: 0;
     }
 }
 @media (max-width: 450px){
+    /* 1. Ajuste do Container Principal */
+    .pg_personal_chefe, 
+    body {
+        overflow-x: hidden; /* Garante que nada force rolagem horizontal */
+    }
 
+    /* 2. Correção da Galeria de Fotos (As 3 fotos giradas) */
+    .galeria_sobre_pf {
+        width: 100%; /* Mudança CRÍTICA: de 350px fixo para 100% */
+        max-width: 320px; /* Garante que não estoure */
+        height: 280px; /* Reduz a altura pois as imagens serão menores */
+        margin: 20px auto;
+    }
+
+    /* Reduz o tamanho das imagens da galeria para caberem na tela estreita */
+    .galeria_sobre_pf figure img {
+        width: 120px; /* Reduzido de 140px para 100px */
+        border-width: 2px; /* Borda mais fina para economizar espaço */
+    }
+
+    /* Reposiciona as imagens para ficarem mais juntinhas */
+    .img_1_sobre_pf {
+        left: 0; /* Cola na esquerda */
+        top: 40px;
+        transform: rotate(-10deg); /* Rotação menor ocupa menos largura */
+    }
+
+    .img_2_sobre_pf {
+        right: 0; /* Cola na direita */
+        top: 40px;
+        transform: rotate(10deg);
+    }
+
+    .img_3_sobre_pf {
+        top: 0;
+        /* A imagem do meio (z-index maior) continua centralizada */
+    }
+
+    /* Efeito Hover Ajustado para não vazar a tela */
+    .galeria_sobre_pf figure:hover .img_1_sobre_pf {
+        transform: rotate(-15deg) scale(1.05);
+    }
+    .galeria_sobre_pf figure:hover .img_2_sobre_pf {
+        transform: rotate(15deg) scale(1.05);
+    }
+
+    /* 3. Imagens Normais (Como funciona, etc) */
+    .area_foto_sobre figure img,
+    .foto_sobre_produto figure img,
+    .foto_acao_personal_chefe img {
+        width: 100%; /* Ocupa a largura disponível */
+        height: auto;
+        max-width: 280px; /* Tamanho máximo seguro */
+    }
+
+    /* 4. Textos e Paddings */
+    .sobre_personal_chefe,
+    .acao_personal_chefe,
+    .planos_personal_chefe {
+        padding: 0 15px; /* Reduz padding lateral para dar mais espaço ao texto */
+    }
+
+    h2 {
+        font-size: 1.4rem; /* Reduz levemente o título */
+        word-wrap: break-word; /* Evita que palavras longas vazem */
+    }
+
+    p {
+        font-size: 1rem; /* Texto mais legível em tela pequena */
+    }
 }
