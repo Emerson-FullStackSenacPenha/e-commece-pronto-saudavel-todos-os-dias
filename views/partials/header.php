@@ -1,19 +1,37 @@
 <?php
-    // Certifique-se de que a sessão está iniciada em todas as páginas
-    if (session_status() !== PHP_SESSION_ACTIVE) {
-        session_start();
-    }
-    // Variável para verificar se o usuário está logado
-    $usuario_logado = isset($_SESSION["user_nome"]);
+// Certifique-se de que a sessão está iniciada em todas as páginas
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+// Variável para verificar se o usuário está logado
+$usuario_logado = isset($_SESSION["user_nome"]);
 
-    // Se estiver logado, armazene o nome para uso mais fácil
-    $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
+// Se estiver logado, armazene o nome para uso mais fácil
+$nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
 ?>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
 
 <!-- Desktop -->
 <header id="desktop">
+
+    <!-- Pop-up da parte de entregas, para calculo de frete -->
+
+    <div id="frete-popup" class="popup-frete">
+        <div class="popup-content">
+            <h3>Calcular Frete</h3>
+            <p> Entregas e retiradas apenas aos sábados na Grande SP </p>
+
+            <label for="cep-input">CEP</label>
+            <input id="cep-input" type="text" placeholder="Digite seu CEP" maxlength="9">
+
+            <button id="btn-calcular-frete">Calcular</button>
+
+            <p id="resultado-frete"></p>
+
+            <span id="close-popup">×</span>
+        </div>
+    </div>
 
     <!-- Começo do menu -->
     <div id="menu">
@@ -22,7 +40,7 @@
 
             <!-- Logo -->
             <a id="logo" href="<?= $baseUrl ?>/public/index.php?page=home"></a>
-                
+
 
             <!-- Barra de pesquisa -->
             <div id="busca">
@@ -37,14 +55,14 @@
             <ul id="lista_icons">
 
                 <li>
-                    <a href="">
+                    <a href="<?= $baseUrl ?>/public/index.php?page=personalChefe">
                         <div id="chefinho"></div>
                     </a>
                 </li>
 
                 <li>
-                    <a href="">
-                        <div id="entrega"></div>
+                    <a href="#" id="entrega-area">
+                        <div id="entrega" title="Entregas"></div>
                     </a>
                 </li>
 
@@ -57,10 +75,10 @@
                 <li>
 
                     <?php if ($usuario_logado): ?>
-                        
-                            <a id="nome_logado" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logado.php">Olá, <?= htmlspecialchars($nome_usuario) ?></a>
-                            <a id="sair" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php" >Sair</a>
-                        
+
+                        <a id="nome_logado" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logado.php">Olá, <?= htmlspecialchars($nome_usuario) ?></a>
+                        <a id="sair" href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php">Sair</a>
+
                     <?php else: ?>
                         <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php">
                             <div id="usuario"></div>
@@ -134,22 +152,22 @@
 
                     <ul class="lista_hamburguer">
 
-                        
+
 
                         <?php if ($usuario_logado): ?>
-                        <a href="#"> <span id="nome_usuario_logado">Olá, <?= htmlspecialchars($nome_usuario) ?></span> </a>
-                        <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php" class="btn">Sair</a>
-                    <?php else: ?>
-                        <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php">Entrar</a></li>
-                        <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/register.php">Cadastrar</a></li>
-                    <?php endif; ?>
+                            <a href="#"> <span id="nome_usuario_logado">Olá, <?= htmlspecialchars($nome_usuario) ?></span> </a>
+                            <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php" class="btn">Sair</a>
+                        <?php else: ?>
+                            <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php">Entrar</a></li>
+                            <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/register.php">Cadastrar</a></li>
+                        <?php endif; ?>
 
                     </ul>
                     <hr>
                     <ul class="lista_hamburguer">
 
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=home">Inicio</a></li>
-                        <li><a href="">Personal Chefe</a></li>
+                        <li><a href="<?= $baseUrl ?>/public/index.php?page=personalChefe">Personal Chefe</a></li>
                         <li><a href="">Entregas</a></li>
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=carrinho_de_compras">Carrinho de Compras</a></li>
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a></li>
@@ -167,7 +185,26 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <script>
+    const entregaIcon = document.getElementById("entrega");
+    const popup = document.getElementById("frete-popup");
+    const closePopup = document.getElementById("close-popup");
 
+    entregaIcon.addEventListener("click", () => {
+        popup.style.display = "flex";
+    });
+
+    closePopup.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
+    // Fechar ao clicar fora do card
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) popup.style.display = "none";
+    });
+
+</script>
 </header>
 
 <main>

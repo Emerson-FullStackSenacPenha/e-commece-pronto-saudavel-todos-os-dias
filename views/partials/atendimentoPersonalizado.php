@@ -6,7 +6,7 @@
     </div>
     <!-- Link WhatsApp -->
     <div class="div_btn_whatsapp">
-        <a href="https://wa.me/5511996090998?text=⭐%20👨‍🍳%20Plano%20de%20Atendimento%20Personal%20Chefe%20🍴%20⭐%0A%0A🍲%20Conveniência%20→%20🔥%20R%24%20350,00%20🔥%0A%0A✅%205%20preparos%20(sendo%203%20proteínas%20🍖%20e%202%20acompanhamentos%20🥗)%0A✅%20Rendimento%20médio%20de%2015%20a%2020%20marmitinhas%20🍱%20de%20500ml%0A✅%20Mais%20de%2050%20opções%20de%20escolha%20🥘%0A✅%20Organização%20dos%20preparos%20📋,%20porcionamento%20e%20Identificação%20🏷️%0A✅%20Limpeza%20dos%20utensílios%20🧽%20e%20locais%20utilizados%20✨%0A%0A⚠️%20ATENÇÃO:%20O%20rendimento%20informado%20pode%20sofrer%20alterações,%20caso%20não%20sejam%20seguidas%20as%20indicações%20da%20lista%20de%20compras%20🛒" target="_blank" class="btn_whatapp">WhatsApp</a>
+        <a href="https://wa.me/5511940367571?text=Ol%C3%A1!%20%F0%9F%98%8A%20Tenho%20interesse%20na%20*marmita%20personalizada*.%20Gostaria%20de%20saber%20mais%20sobre%20como%20voc%C3%AAs%20preparam%20tudo%20conforme%20o%20meu%20gosto%20%F0%9F%8D%BD%20e%20tamb%C3%A9m%20como%20funcionam%20as%20adapta%C3%A7%C3%B5es%20para%20quem%20tem%20alguma%20restri%C3%A7%C3%A3o%20m%C3%A9dica%20%F0%9F%A9%BA" target="_blank" class="btn_whatapp">WhatsApp</a>
     </div>
 
 </section>

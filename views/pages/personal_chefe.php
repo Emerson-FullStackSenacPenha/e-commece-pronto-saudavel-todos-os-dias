@@ -14,8 +14,7 @@
 
             <section class="sobre_personal_chefe">
 
-                <h2>O que é o Personal chefe?</h2>
-                <br>
+                <h2>O que é o serviço de Personal chefe?</h2>
                 <p>
                     Um Personal Chef é um profissional da gastronomia que oferece um serviço de culinária totalmente personalizado, geralmente na casa do cliente ou em um local de evento privado.
                     Diferente do chef de restaurante, o Personal Chef atua de forma exclusiva, adaptando todo o menu aos gostos, necessidades dietéticas (como dietas específicas, restrições ou alergias) e objetivos nutricionais do contratante.
@@ -30,7 +29,6 @@
             <section class="acao_personal_chefe">
 
                 <h2>Como funciona ?</h2>
-                <br>
                 <p>
                     Em resumo, ela:
                     Cria o cardápio: Desenvolve refeições ou jantares sob medida. Faz as compras ou seleciona todos os ingredientes necessários. Prepara a Comida: Cozinha no local, garantindo frescor e qualidade.Organiza a Rotina: Muitas vezes, prepara um lote de marmitas prontas para a semana, organiza e higieniza a cozinha antes de ir embora.
@@ -94,7 +92,7 @@
                     </p>
 
                     <div class="contrate_personal_chefe_abaixo">
-                        <a class="contrate_pelo_whatsapp" href="">
+                        <a class="contrate_pelo_whatsapp" href="https://wa.me/5511940367571?text=%E2%AD%90%F0%9F%91%A8%E2%80%8D%F0%9F%8C%BC%20*Plano%20de%20Atendimento%20Personal%20Chefe*%20%F0%9F%8D%B4%E2%AD%90%0A%0A%F0%9F%8D%B2%20*Conveni%C3%AAncia*%20%E2%86%92%20%F0%9F%94%A5%20*R%24%20350*%20%F0%9F%94%A5%0A%0A%E2%9C%85%20*Preparos%20personalizados:*%203%20*prote%C3%ADnas*%20%F0%9F%8D%96%20e%202%20*acompanhamentos*%20%F0%9F%A5%97%0A%E2%9C%85%20*Rendimento%20m%C3%A9dio:*%2015%20a%2020%20marmitinhas%20%F0%9F%8D%B1%20de%20500ml%0A%E2%9C%85%20*Mais%20de%2050%20op%C3%A7%C3%B5es*%20de%20escolha%20%F0%9F%A5%98%0A%E2%9C%85%20*Organiza%C3%A7%C3%A3o*%20dos%20preparos%20%F0%9F%93%8B,%20porcionamento%20e%20*Identifica%C3%A7%C3%A3o*%20%F0%9F%8F%B7%EF%B8%8F%0A%E2%9C%85%20*Limpeza*%20dos%20utens%C3%ADlios%20%F0%9F%A7%BD%20e%20locais%20utilizados%20%E2%9C%A8%0A%0A%E2%9A%A0%EF%B8%8F%20*ATEN%C3%87%C3%83O:*%20O%20rendimento%20informado%20pode%20sofrer%20*alteracoes*,%20caso%20n%C3%A3o%20sejam%20seguidas%20as%20*indica%C3%A7%C3%B5es*%20da%20lista%20de%20compras%20%F0%9F%9B%92">
                             <b>Contrate Pelo WhatsApp</b>
                         </a>
                     </div>
@@ -119,7 +117,7 @@
                     </p>
 
                     <div class="contrate_personal_chefe_abaixo">
-                        <a class="contrate_pelo_whatsapp" href="">
+                        <a class="contrate_pelo_whatsapp" href="https://wa.me/5511940367571?text=%E2%AD%90%F0%9F%91%A8%E2%80%8D%F0%9F%8C%BC%20*Plano%20de%20Atendimento%20Personal%20Chefe*%20%F0%9F%8D%B4%E2%AD%90%0A%0A%F0%9F%8D%B2%20*Padr%C3%A3o*%20%E2%86%92%20%F0%9F%94%A5%20*R%24%20475*%20%F0%9F%94%A5%0A%0A%E2%9C%85%20*Preparos*:%207%20(%F0%9F%8D%B4%20livre%20escolha)%0A%E2%9C%85%20*Rendimento%20m%C3%A9dio*:%2035%20a%2045%20marmitinhas%20%F0%9F%8D%B1%20de%20500ml%0A%E2%9C%85%20*Mais%20de%2080%20op%C3%A7%C3%B5es*%20de%20escolha%20%F0%9F%A5%98%0A%E2%9C%85%20*Organiza%C3%A7%C3%A3o*%20dos%20preparos%20%F0%9F%93%8B,%20porcionamento%20e%20*Identifica%C3%A7%C3%A3o*%20%F0%9F%8F%B7%EF%B8%8F%0A%E2%9C%85%20*Limpeza*%20dos%20utens%C3%ADlios%20%F0%9F%A7%BD%20e%20locais%20utilizados%20%E2%9C%A8%0A%0A%E2%9A%A0%EF%B8%8F%20*ATEN%C3%87%C3%83O*:%20O%20rendimento%20informado%20pode%20sofrer%20*alteracoes*,%20caso%20n%C3%A3o%20sejam%20seguidas%20as%20*indica%C3%A7%C3%B5es*%20da%20lista%20de%20compras%20%F0%9F%9B%92">
                             <b>Contrate Pelo WhatsApp</b>
                         </a>
                     </div>
@@ -145,7 +143,7 @@
                     </p>
                    
                      <div class="contrate_personal_chefe_abaixo">
-                        <a class="contrate_pelo_whatsapp" href="">
+                        <a class="contrate_pelo_whatsapp" href="https://wa.me/5511940367571?text=%E2%AD%90%F0%9F%91%A8%E2%80%8D%F0%9F%8C%BC%20*Plano%20de%20Atendimento%20Personal%20Chefe*%20%F0%9F%8D%B4%E2%AD%90%0A%0A%F0%9F%8D%B2%20*Premium*%20%E2%86%92%20%F0%9F%94%A5%20*R%24%20630*%20%F0%9F%94%A5%0A%0A%E2%9C%85%20*Rendimento%20m%C3%A9dio*:%2050%20a%2055%20marmitinhas%20%F0%9F%8D%B1%20de%20500ml%20no%20total%20do%20atendimento%0A%E2%9C%85%20*Mais%20de%2080%20op%C3%A7%C3%B5es*%20de%20escolha%20%F0%9F%A5%98%0A%E2%9C%85%20*Organiza%C3%A7%C3%A3o*%20dos%20preparos%20%F0%9F%93%8B,%20porcionamento%20e%20*Identifica%C3%A7%C3%A3o*%20%F0%9F%8F%B7%EF%B8%8F%0A%E2%9C%85%20*Limpeza*%20dos%20utens%C3%ADlios%20%F0%9F%A7%BD%20e%20locais%20utilizados%20%E2%9C%A8%0A%0A%E2%9A%A0%EF%B8%8F%20*ATEN%C3%87%C3%83O*:%20O%20rendimento%20informado%20pode%20sofrer%20*alteracoes*,%20caso%20n%C3%A3o%20sejam%20seguidas%20as%20*indicacoes*%20da%20lista%20de%20compras%20%F0%9F%9B%92">
                             <b>Contrate Pelo WhatsApp</b>
                         </a>
                     </div>
@@ -169,7 +167,7 @@
                     </p>
 
                      <div class="card_maior  contrate_personal_chefe_abaixo">
-                        <a class="contrate_pelo_whatsapp" href="">
+                        <a class="contrate_pelo_whatsapp" href="https://wa.me/5511940367571?text=%E2%AD%90%F0%9F%91%A8%E2%80%8D%F0%9F%8C%BC%20*Plano%20de%20Atendimento%20Personal%20Chefe*%20%F0%9F%8D%B4%E2%AD%90%0A%0A%F0%9F%8E%A8%20*Personalizado*%20%E2%86%92%20%F0%9F%94%A5%20*M%C3%A9dia%20de%20R%24%20350%20a%20700*%20%F0%9F%94%A5%0A%0A%E2%9C%85%20*Preparos%20personalizados*:%203%20*prote%C3%ADnas*%20%F0%9F%8D%96%20e%202%20*acompanhamentos*%20%F0%9F%A5%97%0A%E2%9C%85%20*Rendimento%20m%C3%A9dio*:%20X%20marmitinhas%20%F0%9F%8D%B1%20de%20500ml%20no%20total%20do%20atendimento%0A%E2%9C%85%20*Mais%20de%2050%20op%C3%A7%C3%B5es*%20de%20escolha%20%F0%9F%A5%98%0A%E2%9C%85%20*Organiza%C3%A7%C3%A3o*%20dos%20preparos%20%F0%9F%93%8B,%20porcionamento%20e%20*Identifica%C3%A7%C3%A3o*%20%F0%9F%8F%B7%EF%B8%8F%0A%E2%9C%85%20*Limpeza*%20dos%20utens%C3%ADlios%20%F0%9F%A7%BD%20e%20locais%20utilizados%20%E2%9C%A8%0A%0A%E2%9A%A0%EF%B8%8F%20*ATEN%C3%87%C3%83O*:%20O%20rendimento%20informado%20pode%20sofrer%20*alteracoes*,%20caso%20n%C3%A3o%20sejam%20seguidas%20as%20*indicacoes*%20da%20lista%20de%20compras%20%F0%9F%9B%92">
                             <b>Contrate Pelo WhatsApp</b>
                         </a>
                     </div>
