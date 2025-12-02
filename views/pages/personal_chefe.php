@@ -4,7 +4,7 @@
              <section class="galeria_personal_chefe">
 
                 <figure>
-                     <img class="image_1_personal_chefe" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image1.jpg" alt="Chef na cozinha">
+                    <img class="image_1_personal_chefe" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image1.jpg" alt="Chef na cozinha">
                     <img class="image_2_personal_chefe" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image2.jpg" alt="Chef preparando ingredientes">
                     <img class="image_3_personal_chefe" src="<?= $baseUrl ?>/public/images/pg_personal_chefe_images/image3.jpg" alt="Close de uma marmita saudável">
                 </figure>

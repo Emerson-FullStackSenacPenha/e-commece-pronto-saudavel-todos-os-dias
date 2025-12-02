@@ -101,30 +101,9 @@ $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
 
             <li><a href="<?= $baseUrl ?>/public/index.php?page=home">Inicio</a></li>
             <li><a href="<?= $baseUrl ?>/public/index.php?page=personalChefe">Personal Chefe</a></li>
-            <li class="marmitaSubmenu">
-                <a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a>
-
-                <ul class="submenuMarmita">
-                    <li><a href="#marmita-fit">Fitness</a></li>
-                    <li><a href="#marmita-vegan">Low Carb</a></li>
-                    <li><a href="#kits">Vegana</a></li>
-                </ul>
-
-            </li>
-            <li class="produtosSubmenu">
-                <a href="">Outros Produtos</a>
-
-                <ul class="submenuProdutos">
-                    <li><a href="">Caldo</a></li>
-                    <li><a href="">Temperos</a></li>
-                    <li><a href="">Torta</a></li>
-                    <li><a href="">Sopa</a></li>
-                    <li><a href="">Sobremesa</a></li>
-                    <li><a href="">Sucos</a></li>
-                </ul>
-
-            </li>
-            <li>Quem Somos</li>
+            <li><a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a></li>
+            <li>Outros Produtos</li>
+            <li><a href="<?= $baseUrl ?>/public/index.php?page=about">Quem Somos</a></li>
 
         </ul>
 
