@@ -15,6 +15,24 @@ $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
 <!-- Desktop -->
 <header id="desktop">
 
+    <!-- Pop-up da parte de entregas, para calculo de frete -->
+
+    <div id="frete-popup" class="popup-frete">
+        <div class="popup-content">
+            <h3>Calcular Frete</h3>
+            <p> Entregas e retiradas apenas aos sábados na Grande SP </p>
+
+            <label for="cep-input">CEP</label>
+            <input id="cep-input" type="text" placeholder="Digite seu CEP" maxlength="9">
+
+            <button id="btn-calcular-frete">Calcular</button>
+
+            <p id="resultado-frete"></p>
+
+            <span id="close-popup">×</span>
+        </div>
+    </div>
+
     <!-- Começo do menu -->
     <div id="menu">
 
@@ -43,8 +61,8 @@ $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
                 </li>
 
                 <li>
-                    <a href="">
-                        <div id="entrega"></div>
+                    <a href="#" id="entrega-area">
+                        <div id="entrega" title="Entregas"></div>
                     </a>
                 </li>
 
@@ -188,7 +206,26 @@ $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <script>
+    const entregaIcon = document.getElementById("entrega");
+    const popup = document.getElementById("frete-popup");
+    const closePopup = document.getElementById("close-popup");
 
+    entregaIcon.addEventListener("click", () => {
+        popup.style.display = "flex";
+    });
+
+    closePopup.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
+    // Fechar ao clicar fora do card
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) popup.style.display = "none";
+    });
+
+</script>
 </header>
 
 <main>
