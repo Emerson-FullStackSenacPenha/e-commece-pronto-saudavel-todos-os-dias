@@ -5,9 +5,14 @@ require_once __DIR__ . "/../partials/exibir-produtos.php";
 require_once __DIR__ . "/../partials/todos-produtos.php";
 ?>
 
-<h2 class="titulo">Temperos</h2>
+<section class="produtos_pronto_saudavel">
 
-<main class="product-grid">
-    <?php exibirProdutos($conexao, $template_card, $baseUrl, "tempero"); ?>
-</main>
+    <h2 class="titulo">Temperos</h2>
+
+    <main class="product-grid">
+        <?php exibirProdutos($conexao, $template_card, $baseUrl, "tempero"); ?>
+    </main>
+    
+</section>
+
 

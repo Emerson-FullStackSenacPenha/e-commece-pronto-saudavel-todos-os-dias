@@ -13,7 +13,7 @@ body {
 
 /* =========================== Espaçamento para o Header Fixo =========================== */
 .titulo {
-    margin-top: 150px;
+    margin-top: 140px;
     /* altura aproximada do header */
 }
 
@@ -41,6 +41,8 @@ main.product-grid {
 
 .produtos_pronto_saudavel {
     min-height: 71vh;
+    
+    padding: 0 25px 25px 25px;
 }
 
 /* =========================== Responsividade =========================== */

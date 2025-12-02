@@ -6,10 +6,12 @@ require_once __DIR__ . "/../partials/todos-produtos.php";
 
 ?>
 
-<h2 class="titulo">Todos os Produtos</h2>
+<section class="produtos_pronto_saudavel">
+    <h2 class="titulo">Todos os Produtos</h2>
 
-<main class="product-grid">
+    <main class="product-grid">
 
-    <?php exibirProdutos($conexao, $template_card, $baseUrl, "marmita"); ?>
-    
-</main>
+        <?php exibirProdutos($conexao, $template_card, $baseUrl, "marmita"); ?>
+        
+    </main>
+</section>
