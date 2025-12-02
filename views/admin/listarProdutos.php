@@ -20,8 +20,8 @@ $produtos = listarProdutos($conexao);
         
         /* Estilo para a miniatura da imagem */
         .miniatura {
-            width: 60px;       /* Largura fixa */
-            height: 60px;      /* Altura fixa */
+            width: 80px;       /* Largura fixa */
+            height: 80px;      /* Altura fixa */
             object-fit: cover; /* Corta a imagem para caber no quadrado sem esticar */
             border-radius: 5px; /* Bordas arredondadas (opcional) */
             border: 1px solid #ccc;
@@ -30,28 +30,21 @@ $produtos = listarProdutos($conexao);
 </head>
 <body>
     <h1>📋 Produtos</h1>
-    
-    <a href="inserir.php">➕ Novo Produto</a> 
     <br><br>
 
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Imagem</th>
                 <th>Nome</th>
                 <th>Preço</th>
                 <th>Estoque</th>
-                <th>Imagem</th> <th>Ações</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($produtos as $produto): ?>
             <tr>
-                <td><?= htmlspecialchars($produto['id'] ?? 'N/A'); ?></td>
-                <td><?= htmlspecialchars($produto['nome'] ?? 'N/A'); ?></td>
-                <td>R$ <?= number_format($produto['valor'] ?? 0, 2, ',', '.'); ?></td>
-                <td><?= htmlspecialchars($produto['estoque'] ?? 0); ?></td>
-                
                 <td style="text-align: center;">
                     <?php 
                         $nomeArquivo = $produto['imagem_url'] ?? null;
@@ -72,6 +65,10 @@ $produtos = listarProdutos($conexao);
                         }
                     ?>
                 </td>
+                <td><?= htmlspecialchars($produto['nome'] ?? 'N/A'); ?></td>
+                <td>R$ <?= number_format($produto['valor'] ?? 0, 2, ',', '.'); ?></td>
+                <td><?= htmlspecialchars($produto['estoque'] ?? 0); ?></td>
+                
                 
                 <td>
                     <a href="atualizarProdutos.php?id=<?= $produto['id']; ?>">Editar</a> | 
@@ -81,6 +78,8 @@ $produtos = listarProdutos($conexao);
             <?php endforeach; ?>
         </tbody>
     </table>
+
+       <a href="inserir.php">➕ Novo Produto</a> 
     
     <script src="../admin/js/confirmar_exclusao.js"></script>
 </body>
