@@ -10,6 +10,6 @@ require_once __DIR__ . "/../partials/todos-produtos.php";
 
 <main class="product-grid">
 
-    <?php exibirProdutos($conexao, $template_card, $baseUrl); ?>
+    <?php exibirProdutos($conexao, $template_card, $baseUrl, "marmita"); ?>
     
 </main>
