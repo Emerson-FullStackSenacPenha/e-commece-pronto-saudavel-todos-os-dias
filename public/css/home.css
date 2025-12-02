@@ -440,6 +440,43 @@
     }
 }
 
+@media (min-width: 1300px) {
+    .informacoes {
+        font-size: 1.45rem; 
+        width: 65%;
+    }
+
+    .texto {
+        line-height: 1.5;
+        font-size: 0.7em; 
+    }
+
+    .botoes_personal_chefe {
+        height: 50px;
+        display: grid;
+        align-items: center;
+        font-size: 2.2em;
+        padding: 16px 20px;
+        max-width: 300px;
+    }
+
+    .botoes {
+        gap: 215px;
+    }
+
+    .imagem_personal_chefe img {
+        max-width: 900px; 
+        border-radius: 50px;
+        display: grid;
+        align-items: justify;
+
+    }
+
+    .cabecalho_personal_chefe {
+        font-size: 2em;
+    }
+}
+
 .galeriaInsta{
 
     

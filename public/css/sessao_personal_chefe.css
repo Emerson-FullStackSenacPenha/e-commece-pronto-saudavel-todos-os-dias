@@ -166,11 +166,11 @@
 
     .texto {
         line-height: 1.5;
-        font-size: 1.2em; 
+        font-size: 0.7em; 
     }
 
     .botoes_personal_chefe {
-        height: 100px;
+        height: 70px;
         display: grid;
         align-items: center;
         font-size: 2.2em;
