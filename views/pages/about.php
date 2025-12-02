@@ -54,7 +54,7 @@
                     <p>
                         Um Personal Chef é um profissional da gastronomia que oferece um serviço de culinária totalmente personalizado, diretamente na casa do cliente ou em um local de evento privado.
                     </p>
-                    <a href="" class="botao-contrate">Contrate</a>
+                    <a href="<?= $baseUrl ?>/public/index.php?page=personalChefe" class="botao-contrate">Contrate</a>
                     
                 </div>
         </section>
