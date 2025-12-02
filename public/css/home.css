@@ -19,6 +19,12 @@
 
 }
 
+#carouselExampleSlidesOnly.slide.carousel{
+
+    padding: 0px;
+
+}
+
 /* Imagens do carrossel */
 .img_banner {
 
@@ -111,7 +117,6 @@
         animation-duration: 50s;
     }
 }
-
 
 .section-carousel {
     padding: 2rem 0;

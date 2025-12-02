@@ -245,7 +245,7 @@ header{
 
 #nav{
 
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.90);
+    
 
     background-color: white;
     width: 100%;
@@ -267,8 +267,6 @@ header{
     font-weight: 600;
     
 }
-
-
 
 #lista_nav a {
 
@@ -293,11 +291,7 @@ header{
     margin: 0;
 
     border-radius: 2px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.90);
-
-    width: 100%;
-
-
+    
 }
 
 .marmitaSubmenu:hover .submenuMarmita {
@@ -306,6 +300,12 @@ header{
     flex-direction: column;
     gap: 10px;
  
+}
+
+.submenuMarmita a:hover{
+
+    font-weight: 100;
+
 }
 
 .submenuProdutos{
@@ -323,11 +323,7 @@ header{
     margin: 0;
 
     border-radius: 2px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.90);
     
-
-    transition: opacity 0.3s, visibility 0.3s;
-
 }
 
 .produtosSubmenu:hover .submenuProdutos {
@@ -336,12 +332,6 @@ header{
     flex-direction: column;
     gap: 10px;
  
-}
-
-.submenuMarmita a:hover{
-
-    font-weight: 100;
-
 }
 
 .submenuProdutos a:hover{
