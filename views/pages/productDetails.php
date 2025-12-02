@@ -64,7 +64,7 @@
         <span class="titulo-opcao">Tamanho:</span>
         <div class="area-botoes" data-grupo="tamanho">
             <?php
-            $tamanhos = ["200g", "300g", "400g", "500g", "600g"];
+            $tamanhos = ["300g", "400g", "500g", "600g", "700g"];
             foreach ($tamanhos as $t) {
                 echo '<div class="botao"><b>' . $t . '</b></div>';
             }

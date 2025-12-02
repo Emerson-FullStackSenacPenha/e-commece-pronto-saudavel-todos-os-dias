@@ -286,6 +286,7 @@
     .botao-contrate {
         position: static; /* Remove position absolute */
         margin-top: 20px; /* Adiciona margem superior */
+        margin-bottom: 20px;
     }
 }
 
