@@ -19,6 +19,12 @@
 
 }
 
+#carouselExampleSlidesOnly.slide.carousel{
+
+    padding: 0px;
+
+}
+
 /* Imagens do carrossel */
 .img_banner {
 
@@ -111,7 +117,6 @@
         animation-duration: 50s;
     }
 }
-
 
 .section-carousel {
     padding: 2rem 0;
@@ -451,7 +456,7 @@
 
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     gap: 5%;
 
