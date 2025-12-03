@@ -2,7 +2,10 @@
 //Usado para proteger a página, caso o usuário tente entrar direto, ele vai ser redirecionado para a página de login.
 require_once '../../../app/core/Session.php';
 // Verifica se o usuário está logado
+   $caminho = __DIR__ . '/../../../public/index.php?page=home'; 
+
 verificaLogin();
+
 
 ?>
 
@@ -95,8 +98,8 @@ verificaLogin();
 
         <div id="options">
             
-            <a href="/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=home" class="btn1">Inicio</a>
-            <a href="/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=produtos" class="btn1">Marmitas</a>
+            <a href="<?= $caminho ?>" class="btn1">Inicio</a>
+            <a href="<?= $baseUrl ?>/public/index.php?page=produtos" class="btn1">Marmitas</a>
         </div>
     </div>
 </body>
