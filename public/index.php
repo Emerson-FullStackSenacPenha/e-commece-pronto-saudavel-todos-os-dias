@@ -34,9 +34,9 @@ if ($action === 'gerenciar_carrinho') {
         'carrinho_de_compras' => VIEWS_PATH . '/pages/carrinho_de_compras.php',
         'productDetails' => VIEWS_PATH . '/pages/productDetails.php',
         'personalChefe' => VIEWS_PATH . '/pages/personal_chefe.php',
-        'about' => VIEWS_PATH . '/pages/about.php'
+        'about' => VIEWS_PATH . '/pages/about.php',
         // Adicione as outras páginas aqui
-   
+        'produtos_buscados' =>  VIEWS_PATH . '/pages/produtos_buscados.php'
     ];
 
    

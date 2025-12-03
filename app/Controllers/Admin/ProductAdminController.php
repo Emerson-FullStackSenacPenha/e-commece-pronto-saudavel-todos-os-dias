@@ -212,4 +212,17 @@ function buscarProdutoPorId($conexao, $id) {
     }
 }
 
+    function buscarProdutos($conexao, string $produtoASerBuscado): array {
+
+        $sql = "SELECT nome, descricao, valor, imagem_url FROM produtos WHERE nome LIKE :produtos";
+
+        $consulta = $conexao->prepare($sql);
+
+        $consulta->bindValue(":produtos", "%". $produtoASerBuscado ."%");
+
+        $consulta->execute();
+
+        return $consulta->fetchAll();
+    }
+
 ?>

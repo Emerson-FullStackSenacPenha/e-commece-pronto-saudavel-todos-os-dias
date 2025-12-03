@@ -43,9 +43,11 @@ $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
  
  
             <!-- Barra de pesquisa -->
-            <div id="busca">
-                <input type="text" placeholder="🔍">
-            </div>
+            <form id="busca" action="<?= $baseUrl ?>/public/index.php" method="GET">
+                <input type="hidden" name="page" value="produtos_buscados">
+
+                <input type="search" name="busca" placeholder="Digite o produto que deseja aqui...">
+            </form>
  
         </div>
  
