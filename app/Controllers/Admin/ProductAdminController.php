@@ -26,7 +26,7 @@
         }
     }
 
-    function fazerUploadImagem($arquivo) {
+    function fazerUploadImagem($arquivo): mixed {
         // 1. Validação básica (se não enviou nada, retorna null)
         if (!$arquivo || !isset($arquivo["tmp_name"]) || !is_uploaded_file($arquivo["tmp_name"])) {
             return null; 
@@ -102,6 +102,36 @@ function atualizarProduto($conexao, $id, $nome, $descricao, $valor, int $estoque
     }
 
     try {
+        // Busca a imagem atual para preservar ou apagar ela.
+        $sqlImg = "SELECT imagem_url FROM produtos WHERE id = :id";
+        $consultaImg = $conexao->prepare($sqlImg);
+        $consultaImg->bindValue(":id", (int)$id, PDO::PARAM_INT);
+        $consultaImg->execute();
+        $produtoAtual = $consultaImg->fetch(PDO::FETCH_ASSOC);
+
+        if(!$produtoAtual) return "Produto não encontrado.";
+        // Por padrão a img é a mesma de antes.
+        $nomeFinalImagem = $produtoAtual['imagem_url'];
+
+        //Lógica para uma nova imagem
+
+        if(isset($imagem) && is_array($imagem) && $imagem['error'] === 0){
+            // Subimos a nova imagem
+            $novaImg = fazerUploadImagem($imagem);
+            if($novaImg){
+                $nomeFinalImagem = $novaImg;
+                //Apagamos a antiga
+                if(!empty($produtoAtual['imagem_url'])){
+                    $caminhoAntigo = __DIR__ . '/../../../public/images/products/' . $produtoAtual['imagem_url'];
+                    if(file_exists($caminhoAntigo)){
+                        unlink($caminhoAntigo);
+                    }
+                }
+            }
+        }
+
+
+
         $sql = "UPDATE produtos 
                 SET nome = :nome, descricao = :descricao, valor = :valor, 
                     estoque = :estoque, imagem_url = :imagem_url
@@ -112,7 +142,7 @@ function atualizarProduto($conexao, $id, $nome, $descricao, $valor, int $estoque
         $consulta->bindValue(":descricao", $descricao);
         $consulta->bindValue(":valor", $valor);
         $consulta->bindValue(":estoque", (int)$estoque, PDO::PARAM_INT);
-        $consulta->bindValue(":imagem_url", $imagem);
+        $consulta->bindValue(":imagem_url", $nomeFinalImagem);
 
         $consulta->execute();
 
@@ -129,6 +159,25 @@ function excluirProduto($conexao, $id) {
     }
 
     try {
+        // --- PASSO 1: Descobrir o nome da imagem antes de deletar ---
+        $sqlImg = "SELECT imagem_url FROM produtos WHERE id = :id";
+        $consultaImg = $conexao->prepare($sqlImg);
+        $consultaImg->bindValue(":id", (int)$id, PDO::PARAM_INT);
+        $consultaImg->execute();
+
+        $selecionaImg = $consultaImg->fetch(PDO::FETCH_ASSOC);
+
+        // --- PASSO 2: Se o produto existe e tem imagem, apaga o arquivo ---
+        if($selecionaImg && !empty($selecionaImg['imagem_url'])){
+
+            // Define o caminho completo até a pasta products
+            $caminhoArquivo = __DIR__ . '/../../../public/images/products/' . $selecionaImg['imagem_url'];
+            // Verifica se o arquivo existe fisicamente antes de tentar apagar
+            if(file_exists($caminhoArquivo)){
+                unlink($caminhoArquivo); // A função mágica que deleta o arquivo
+            }
+        }
+
         $sql = "DELETE FROM produtos WHERE id = :id";
         $consulta = $conexao->prepare($sql);
         $consulta->bindValue(":id", (int)$id, PDO::PARAM_INT);
