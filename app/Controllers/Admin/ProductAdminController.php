@@ -129,6 +129,25 @@ function excluirProduto($conexao, $id) {
     }
 
     try {
+        // --- PASSO 1: Descobrir o nome da imagem antes de deletar ---
+        $sqlImg = "SELECT imagem_url FROM produtos WHERE id = :id";
+        $consultaImg = $conexao->prepare($sqlImg);
+        $consultaImg->bindValue(":id", (int)$id, PDO::PARAM_INT);
+        $consultaImg->execute();
+
+        $selecionaImg = $consultaImg->fetch(PDO::FETCH_ASSOC);
+
+        // --- PASSO 2: Se o produto existe e tem imagem, apaga o arquivo ---
+        if($selecionaImg && !empty($selecionaImg['imagem_url'])){
+
+            // Define o caminho completo até a pasta products
+            $caminhoArquivo = __DIR__ . '/../../../public/images/products/' . $selecionaImg['imagem_url'];
+            // Verifica se o arquivo existe fisicamente antes de tentar apagar
+            if(file_exists($caminhoArquivo)){
+                unlink($caminhoArquivo); // A função mágica que deleta o arquivo
+            }
+        }
+
         $sql = "DELETE FROM produtos WHERE id = :id";
         $consulta = $conexao->prepare($sql);
         $consulta->bindValue(":id", (int)$id, PDO::PARAM_INT);
