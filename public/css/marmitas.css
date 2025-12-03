@@ -1,6 +1,4 @@
-/* ===========================
-   Reset e Configuração Base
-   =========================== */
+/* =========================== Reset e Configuração Base =========================== */
 * {
     margin: 0;
     padding: 0;
@@ -11,19 +9,15 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #fff;
     color: #2c3e50;
-
 }
 
-/* ===========================
-   Espaçamento para o Header Fixo
-   =========================== */
+/* =========================== Espaçamento para o Header Fixo =========================== */
 .titulo {
-    margin-top: 150px; /* altura aproximada do header */
+    margin-top: 140px;
+    /* altura aproximada do header */
 }
 
-/* ===========================
-   Estilo do Título Principal
-   =========================== */
+/* =========================== Estilo do Título Principal =========================== */
 .titulo {
     font-weight: 700;
     font-size: 1.5rem;
@@ -34,23 +28,29 @@ body {
     text-transform: uppercase;
 }
 
-/* ===========================
-   Estilo do Container Principal (Main)
-   =========================== */
+
+/* =========================== Estilo do Container Principal (Main) =========================== */
 main.product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 260px));
+    justify-content: center; /* CENTRALIZA AQUI */
     gap: 2rem;
     padding: 0 5%;
     margin-bottom: 100px;
 }
 
-/* ===========================
-   Responsividade
-   =========================== */
+.produtos_pronto_saudavel {
+    min-height: 71vh;
+    
+    padding: 0 25px 25px 25px;
+}
+
+/* =========================== Responsividade =========================== */
 @media (max-width: 768px) {
     main {
         margin-top: 50px; /* header menor no mobile */
+        margin-top: 100px;
+        /* header menor no mobile */
     }
 
     .titulo {
@@ -59,8 +59,9 @@ main.product-grid {
     }
 
     main.product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
         gap: 1.5rem;
         padding: 0 2rem;
+        justify-content: start;
     }
 }

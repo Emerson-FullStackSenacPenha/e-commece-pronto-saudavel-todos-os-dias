@@ -1,134 +1,133 @@
 <?php
-// Este arquivo assume que uma variável chamada $produto existe.
+// Este arquivo assume que a variável $produto existe.
 // O foreach em 'mais-vendidos.php' garante que ela exista.
 ?>
+
 <article class="product-card">
 
-    <a href="<?= $baseUrl ?>/public/index.php?page=productDetails&id=<?= $produto['id']?>">
+    <a href="<?= $baseUrl ?>/public/index.php?page=productDetails&id=<?= $produto['id'] ?>">
+        
         <figure class="product-card__figure">
-            <img class="product-card__image"
+            <img 
+                class="product-card__image"
                 src="<?= htmlspecialchars($produto['imagem_url']) ?>" 
                 alt="<?= htmlspecialchars($produto['nome']) ?>">
-            </img>     
         </figure>
 
         <div class="product-card__content">
 
             <div class="product-card__tags">
                 <span class="tag-item">CONTÉM GLÚTEN</span>
-
                 <span class="tag-item">CONTÉM LACTOSE</span>
             </div>
 
             <div class="product-card__nutrition">
 
-            <div class="nutrition-item">
-
+                <div class="nutrition-item">
                     <strong>444</strong>
-
                     <span>KCAL</span>
-
                 </div>
 
                 <div class="nutrition-item">
-
                     <strong>56</strong>
-
                     <span>PROT.</span>
-
                 </div>
 
                 <div class="nutrition-item">
-
                     <strong>120</strong>
-
                     <span>CARB.</span>
-
                 </div>
 
                 <div class="nutrition-item">
-
                     <strong>17</strong>
-
                     <span>GORD.</span>
-
                 </div>
+
             </div>
             
-            <h3 class="product-card__title"><?= htmlspecialchars($produto['nome']) ?></h3>
+            <h3 class="product-card__title">
+                <?= htmlspecialchars($produto['nome']) ?>
+            </h3>
 
-            <p class="product-card__price preco-display">R$ <?= number_format($produto['preco'] * 5, 2, ',', '.') ?></p>
+            <p class="product-card__price preco-display">
+                R$ <?= number_format($produto['preco'] * 5, 2, ',', '.') ?>
+            </p>
+
         </div>
-    </a> 
+
+    </a>
 
     <div class="product-card__actions" data-preco-unitario="<?= $produto['preco'] ?>">
         
         <form action="<?= $baseUrl ?>/public/index.php" method="POST">
-            
+
             <input type="hidden" name="action" value="gerenciar_carrinho">
-            <input type="hidden" name="acao_carrinho" value="adicionar"> 
+            <input type="hidden" name="acao_carrinho" value="adicionar">
             <input type="hidden" name="id_produto" value="<?= $produto['id'] ?>">
-            
+
             <div class="quantity-selector">
-                <button class="quantity-selector__button" type="button" onclick="atualizarPrecoCard(this, -5)">-</button>
-                
-                <input class="quantity-selector__input input-quantidade" 
-                       type="number" 
-                       name="quantidade" 
-                       value="5" 
-                       min="5" 
-                       step="5" 
-                       readonly> 
-                
-                <button class="quantity-selector__button" type="button" onclick="atualizarPrecoCard(this, 5)">+</button>
+
+                <button 
+                    class="quantity-selector__button" 
+                    type="button" 
+                    onclick="atualizarPrecoCard(this, -5)">
+                    -
+                </button>
+
+                <input 
+                    class="quantity-selector__input input-quantidade"
+                    type="number"
+                    name="quantidade"
+                    value="5"
+                    min="5"
+                    step="5"
+                    readonly>
+
+                <button 
+                    class="quantity-selector__button" 
+                    type="button" 
+                    onclick="atualizarPrecoCard(this, 5)">
+                    +
+                </button>
+
             </div>
 
             <button type="submit" class="button button--primary">Adicionar</button>
-            
+
         </form>
+
     </div>
 
     <script>
         function atualizarPrecoCard(botao, delta) {
-            // 1. Encontra os elementos vizinhos
-            const containerAcoes = botao.closest('.product-card__actions'); // A div onde guardamos o preço unitário
-            const card = botao.closest('.product-card'); // O card inteiro
+
+            const containerAcoes = botao.closest('.product-card__actions');
+            const card = botao.closest('.product-card');
             const input = containerAcoes.querySelector('.input-quantidade');
-            const displayPreco = card.querySelector('.product-card__price'); // Onde mostra o valor
-            
-            // 2. Pega os valores atuais
+            const displayPreco = card.querySelector('.product-card__price');
+
             let quantidade = parseInt(input.value);
             let precoUnitario = parseFloat(containerAcoes.getAttribute('data-preco-unitario'));
-            
-            // 3. Calcula a nova quantidade
+
             let novaQuantidade = quantidade + delta;
-            
-            // Validação: Não deixa baixar de 5 (seu mínimo)
+
             if (novaQuantidade < 5) {
                 novaQuantidade = 5;
             }
-            
-            // 4. Atualiza o Input
+
             input.value = novaQuantidade;
-            
-            // 5. Calcula o Novo Preço Total
-           
 
             if (novaQuantidade >= 10) {
-
-                precoUnitario -= 2.00
+                precoUnitario -= 2.00;
             }
 
-             let novoTotal = precoUnitario * novaQuantidade;
-            
-            // 6. Atualiza o Texto na Tela (Formatando para Real R$)
+            let novoTotal = precoUnitario * novaQuantidade;
+
             displayPreco.innerText = novoTotal.toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
             });
-    }
+        }
     </script>
-    
-</article>
-    
 
+</article>
