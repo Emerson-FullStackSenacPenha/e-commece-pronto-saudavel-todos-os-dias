@@ -1,17 +1,54 @@
 <?php
 
-
 /**
- * Busca produtos ativos no banco de dados e exibe os cards HTML.
- * @param PDO $conexao Objeto de conexão PDO.
- * @param string $templatePath Caminho para o arquivo do template do card.
- * @param string $baseUrl A URL base do site (vinda do main.php).
+ * Busca produtos ativos e permite filtrar por nome ou categoria_id.
+ *
+ * @param PDO $conexao
+ * @param string $templatePath
+ * @param string $baseUrl
+ * @param string|null $filtroNomeOuCategoria  Ex: "marmita", "7", "sobremesa"
  */
-function exibirProdutos($conexao, $templatePath, $baseUrl)
+function exibirProdutos($conexao, $templatePath, $baseUrl, $filtroNomeOuCategoria = null)
 {
     try {
-        $sql = "SELECT * FROM produtos WHERE ativo = 1 ORDER BY nome ASC";
-        $stmt = $conexao->prepare($sql);
+
+        // 1. Se houver filtro, verificar se corresponde a categoria_id
+        if ($filtroNomeOuCategoria) {
+
+            // Se for número -> filtrar por categoria_id
+            if (is_numeric($filtroNomeOuCategoria)) {
+
+                $sql = "SELECT * FROM produtos 
+                        WHERE ativo = 1 
+                        AND categoria_id = :categoria
+                        ORDER BY nome ASC";
+
+                $stmt = $conexao->prepare($sql);
+                $stmt->bindParam(":categoria", $filtroNomeOuCategoria, PDO::PARAM_INT);
+
+            } else {
+
+                // Filtrar pelo nome
+                $sql = "SELECT * FROM produtos 
+                        WHERE ativo = 1 
+                        AND nome LIKE :nome
+                        ORDER BY nome ASC";
+
+                $stmt = $conexao->prepare($sql);
+                $like = "%" . $filtroNomeOuCategoria . "%";
+                $stmt->bindParam(":nome", $like);
+            }
+
+        } else {
+
+            // 2. Sem filtro → lista tudo
+            $sql = "SELECT * FROM produtos 
+                    WHERE ativo = 1 
+                    ORDER BY nome ASC";
+
+            $stmt = $conexao->prepare($sql);
+        }
+
         $stmt->execute();
 
         if ($stmt->rowCount() === 0) {
@@ -19,31 +56,21 @@ function exibirProdutos($conexao, $templatePath, $baseUrl)
             return;
         }
 
+        // 3. Exibição
         while ($produto = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            
-            // Define o preço
+
             $produto['preco'] = $produto['valor'] ?? 0;
 
-            // --- LÓGICA DE IMAGEM CORRIGIDA E SIMPLIFICADA ---
-            
-            // 1. Verifica se a coluna 'imagem_url' (o nome correto) não está vazia
             if (!empty($produto['imagem_url'])) {
-                
-                // 2. O caminho já está correto no DB (ex: /public/images/products/marmita.jpg)
-                //    Nós apenas adicionamos a $baseUrl no início.
                 $produto['imagem_url'] = $baseUrl . $produto['imagem_url'];
-                
             } else {
-                // 3. Caminho padrão se não houver imagem
                 $produto['imagem_url'] = $baseUrl . '/public/images/sem-imagem.png';
             }
-            
-            // 4. Inclui o card. O card vai usar a variável $produto['imagem_url']
-            //    que agora tem o caminho completo (http://.../public/...)
+
             include $templatePath;
         }
+
     } catch (PDOException $e) {
         echo "<p style='color:red;'>Erro ao buscar produtos: " . htmlspecialchars($e->getMessage()) . "</p>";
     }
 }
-?>
