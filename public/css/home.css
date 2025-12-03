@@ -84,13 +84,10 @@
 @media (max-width: 768px) {
     #carouselExampleSlidesOnly {
 
-        margin-top: 60px;
+        margin-top: 10px;
         max-height: 250px;
         /* altura menor em tablets */
     }
-}
-
-@media (max-width: 768px) {
     .marquee-content {
         padding-right: 30px;
     }
@@ -383,11 +380,14 @@
 
 
 /* RESPONSIVO (Tablets - 1024px ou menos)  */
-@media (max-width: 1024px) { 
+@media (max-width: 1000px) { 
 
     .sessao_personal_chefe_home {
         height: auto; 
         padding-bottom: 40px;
+    }
+    #carouselExampleSlidesOnly{
+        margin-top: 64px;
     }
 
     .personal_chefe {
@@ -491,29 +491,6 @@
     }
 }
 
-/* RESPONSIVO (Mobile - 768px ou menos)    */
-@media (max-width: 768px) {
-
-    .imagem_personal_chefe img {
-        max-width: 320px;
-    }
-
-    .informacoes {
-        width: 85%;
-        font-size: 1rem;
-    }
-
-    .botoes {
-        padding: 0 15%;
-        gap: 15px;
-    }
-
-    .botoes_personal_chefe {
-        padding: 12px 10px;
-        font-size: 0.9rem;
-        font-weight: bold;
-    }
-}
 
 @media (min-width: 1300px) {
     .informacoes {
