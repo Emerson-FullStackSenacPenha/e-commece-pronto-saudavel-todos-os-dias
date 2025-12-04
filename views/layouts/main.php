@@ -36,11 +36,9 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
 
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/dialog_login.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/footer.css">
-    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/administracaoPainel.css
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/administracaoPainel.css">
 </head>
 <body>
-    
-
 
       <?php require_once VIEWS_PATH . '/partials/header.php'; ?>
 
@@ -55,8 +53,8 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
         ?>
     </main>
 
-        <?php require_once VIEWS_PATH . '/partials/btn_flutuante.php'; ?>
-        <?php require_once VIEWS_PATH . '/partials/footer.php'; ?>
+        <?php require_once VIEWS_PATH . '/partials/btn_flutuante.php'?>;
+        <?php require_once VIEWS_PATH . '/partials/footer.php' ?>;
 
    
 

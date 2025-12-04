@@ -1,20 +1,13 @@
 <?php
     //Usado para proteger a página, caso o usuário tente entrar direto, ele vai ser redirecionado para a página de login.
-    require_once '../../../app/core/Session.php';
-    require_once '../../../config/config.php';
+    //require_once '../../../app/core/Session.php';
 
     // Verifica se o usuário está logado
-    verificaLogin();
+    //verificaLogin();
 
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Área Logada</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -89,9 +82,7 @@
             color: #12602c;
         }
     </style>
-</head>
 
-<body>
     <div class="card">
         <h1>Seja bem-vindo, <?= htmlspecialchars($_SESSION["user_nome"], ENT_QUOTES, 'UTF-8'); ?>!</h1>
         <p>E ótimas compras</p>
@@ -102,6 +93,3 @@
             <a href="<?= BASE_URL ?>/views/admin/administracaoPainel.php" class="btn1">Marmitas</a>
         </div>
     </div>
-</body>
-
-</html>
