@@ -11,6 +11,7 @@ $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
 ?>
  
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+
  
 <!-- Desktop -->
 <header id="desktop">

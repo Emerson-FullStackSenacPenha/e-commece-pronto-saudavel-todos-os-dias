@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 define('VIEWS_PATH', __DIR__ . '/../views');
 $baseUrl = 'http://localhost/e-commece-pronto-saudavel-todos-os-dias';
 
+require_once '../config/config.php';
+
 
 $action = $_POST['action'] ?? null;
 
