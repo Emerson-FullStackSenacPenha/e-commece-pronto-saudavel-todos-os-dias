@@ -301,16 +301,15 @@
     background-color: #12602C;
 
     display: grid;
-    height: 90vh;
-    min-height: 90vh;
     grid-template-rows: 1fr 10fr;
+    
 }
 
 .cabecalho_personal_chefe {
     display: grid;
     align-items: center;
     justify-items: center;
-    width: 100vw;
+    width: 100%;
     color: white;
 }
 
@@ -324,12 +323,13 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    padding: 20px;
+    
 }
 
 .imagem_personal_chefe img {
     width: 100%;
     max-width: 380px;
+    border-radius: 50px;
     height: auto;
     display: block;
 }
@@ -341,7 +341,7 @@
     align-items: center;
     justify-items: center;
     align-content: center;
-    gap: 30px;
+    
     height: 100%;
 }
 
@@ -363,7 +363,7 @@
     align-self: start;
     justify-items: center;
     gap: 10px;
-    padding: 0 20px;
+    
 }
 
 .botoes_personal_chefe {
@@ -398,6 +398,7 @@
 
     .imagem_personal_chefe img {
         max-width: 420px; 
+        border-radius: 50px;
     }
 
     .bloco_direito_informacoes {
@@ -445,7 +446,7 @@
     }
 
     .botoes_personal_chefe {
-        padding: 12px 10px;
+        
         font-size: 0.9rem;
         font-weight: bold;
     }
