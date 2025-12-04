@@ -21,18 +21,20 @@
 
 ?>
 
-<section class="produtos_buscados">
+<section class="produtos_pronto_saudavel">
 
-    <h2>Você procurou por <?= $termo ?> e obteve <?php count($dados)?>resultados</h2>
+    <h2 class="titulo">Você procurou por <?= $termo ?> e obteve <?= count($dados)?> resultados</h2>
     
 
-    <?php foreach($dados as $produto): 
+    <main class="product-grid">
+        <?php foreach($dados as $produto): 
 
-        exibirCardProdutosBuscados($produto['id'], 
-        $produto['nome'], 
-        $produto['valor'], // ou 'preco'
-        $produto['imagem_url'], 
-        $baseUrl);
+            exibirCardProdutosBuscados($produto['id'], 
+            $produto['nome'], 
+            $produto['valor'], // ou 'preco'
+            $produto['imagem_url'], 
+            $baseUrl);
 
-    endforeach; ?>
+        endforeach; ?>
+    </main>
 </section>
