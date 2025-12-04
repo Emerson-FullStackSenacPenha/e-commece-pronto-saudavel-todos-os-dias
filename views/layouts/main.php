@@ -10,7 +10,6 @@ $baseUrl = sprintf(
 
 // Remove a pasta /public da URL base se ela existir, para apontar para a raiz correta
 $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
-    echo $baseUrl;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
