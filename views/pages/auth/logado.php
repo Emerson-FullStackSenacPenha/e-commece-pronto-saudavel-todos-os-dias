@@ -1,19 +1,10 @@
 <?php
-//Usado para proteger a página, caso o usuário tente entrar direto, ele vai ser redirecionado para a página de login.
-require_once '../../../app/core/Session.php';
-// Verifica se o usuário está logado
+    //Usado para proteger a página, caso o usuário tente entrar direto, ele vai ser redirecionado para a página de login.
+    require_once '../../../app/core/Session.php';
+    require_once '../../../config/config.php';
 
-$baseUrl = sprintf(
-    "%s://%s%s",
-    isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
-    $_SERVER['HTTP_HOST'],
-    dirname($_SERVER['SCRIPT_NAME']) === DIRECTORY_SEPARATOR ? '' : dirname($_SERVER['SCRIPT_NAME'])
-);
-
-// Remove a pasta /public da URL base se ela existir, para apontar para a raiz correta
-$baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
-
-verificaLogin();
+    // Verifica se o usuário está logado
+    verificaLogin();
 
 
 ?>
@@ -107,8 +98,8 @@ verificaLogin();
 
         <div id="options">
             
-            <a href="<?= $baseUrl ?>" class="btn1">Inicio</a>
-            <a href="<?= $baseUrl ?>/index.php?page=produtos" class="btn1">Marmitas</a>
+            <a href="<?= BASE_URL ?>/public/index.php?page=home" class="btn1">Inicio</a>
+            <a href="<?= BASE_URL ?>views\admin\listarProdutos.php" class="btn1">Marmitas</a>
         </div>
     </div>
 </body>
