@@ -1,11 +1,8 @@
 <?php
-    //Usado para proteger a página, caso o usuário tente entrar direto, ele vai ser redirecionado para a página de login.
-    require_once '../../../app/core/Session.php';
-    require_once '../../../config/config.php';
-
-    // Verifica se o usuário está logado
-    verificaLogin();
-
+//Usado para proteger a página, caso o usuário tente entrar direto, ele vai ser redirecionado para a página de login.
+require_once '../../../app/core/Session.php';
+// Verifica se o usuário está logado
+verificaLogin();
 
 ?>
 
@@ -98,8 +95,8 @@
 
         <div id="options">
             
-            <a href="<?= BASE_URL ?>/public/index.php?page=home" class="btn1">Inicio</a>
-            <a href="<?= BASE_URL ?>/views/admin/listarProdutos.php" class="btn1">Marmitas</a>
+            <a href="/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=home" class="btn1">Inicio</a>
+            <a href="/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=produtos" class="btn1">Marmitas</a>
         </div>
     </div>
 </body>
