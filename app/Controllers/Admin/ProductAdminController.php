@@ -212,17 +212,22 @@ function buscarProdutoPorId($conexao, $id) {
     }
 }
 
-    function buscarProdutos($conexao, string $produtoASerBuscado): array {
+    function buscarProdutos($conexao, string $termo): array {
 
-        $sql = "SELECT nome, descricao, valor, imagem_url FROM produtos WHERE nome LIKE :produtos";
+        $termo = trim($termo);
+
+        // Pesquisa no Nome OU na Descrição OU nas Palavras-Chave
+        $sql = "SELECT * FROM produtos 
+                WHERE nome LIKE :termo 
+                OR descricao LIKE :termo 
+                OR keywords LIKE :termo 
+                AND ativo = 1";
 
         $consulta = $conexao->prepare($sql);
-
-        $consulta->bindValue(":produtos", "%". $produtoASerBuscado ."%");
-
+        $consulta->bindValue(":termo", "%". $termo ."%");
         $consulta->execute();
 
-        return $consulta->fetchAll();
+        return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 
 ?>

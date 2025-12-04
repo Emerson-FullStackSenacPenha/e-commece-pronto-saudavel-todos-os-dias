@@ -3,12 +3,18 @@
     require_once __DIR__ . '/../../app/core/DataBaseConecta.php'; 
     require_once __DIR__ . '/../../app/Controllers/Admin/ProductAdminController.php';
 
+    require_once __DIR__ . "/../partials/exibir_produtos_buscados.php";
+    
+    
     $erro = null;
 
-    $termo = $GET['busca'];
+    $termo = $_GET['busca'];
     $dados = [];
+
     try {
+
         $dados = buscarProdutos($conexao, $termo);
+
     } catch(Throwable $e) {
         $erro = "Erro ao fazer busca no sistema .<br>".$e->getMessage();
     }
@@ -17,17 +23,16 @@
 
 <section class="produtos_buscados">
 
+    <h2>Você procurou por <?= $termo ?> e obteve <?php count($dados)?>resultados</h2>
+    
 
-    <?php foreach($dados as $produto): ?>
+    <?php foreach($dados as $produto): 
 
-     <article class="product-card--horizontal">
+        exibirCardProdutosBuscados($produto['id'], 
+        $produto['nome'], 
+        $produto['valor'], // ou 'preco'
+        $produto['imagem_url'], 
+        $baseUrl);
 
-      
-       <h4><?= $produto['nome'] ?></h4>
-       <p><?= $produto['descricao'] ?></p>
-       <p><?= $produto['valor'] ?></p>
-         
-     </article>
-
-    <?php endforeach; ?>
+    endforeach; ?>
 </section>
