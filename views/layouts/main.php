@@ -54,6 +54,7 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
         ?>
     </main>
 
+        <?php require_once VIEWS_PATH . '/partials/btn_flutuante.php'; ?>
         <?php require_once VIEWS_PATH . '/partials/footer.php'; ?>
 
    

@@ -7,7 +7,6 @@
 
 /* Container do carrossel */
 #carouselExampleSlidesOnly {
-
     margin-top: 130px;
     width: 100%;
     max-height: 600px;
@@ -16,18 +15,14 @@
     display: block;
     /* remove qualquer flex desnecessário */
     position: relative;
-
 }
 
-#carouselExampleSlidesOnly.slide.carousel{
-
+#carouselExampleSlidesOnly.slide.carousel {
     padding: 0px;
-
 }
 
 /* Imagens do carrossel */
 .img_banner {
-
     width: 100%;
     height: auto;
     /* ajusta a altura automaticamente */
@@ -37,36 +32,53 @@
     object-position: center center;
     /* centraliza o foco da imagem */
     display: block;
-
 }
 
 /* Faixa de aviso - Marquee moderno */
 .marquee-container {
-
     width: 100vw;
     height: 50px;
     overflow: hidden;
     box-sizing: border-box;
-
 }
 
 .marquee {
-
     display: flex;
     width: max-content;
     /* largura do conteúdo total */
     animation: marquee 30s linear infinite;
     font-weight: 600;
-
 }
 
 .marquee-content {
-
     white-space: nowrap;
     flex-shrink: 0;
     padding-right: 15px;
     /* espaço entre repetições do texto */
+}
 
+/* BTN flutuante VVVVVVVVVVVVVVVV */
+.btn_whats_flutuante {
+    position: fixed; /* Fixa na tela */
+    bottom: 40px; /* Distância do btn para baixo */
+    right: 20px; /* Distância para direita */
+    z-index: 1000; /* Ordem, de altura de camada. */
+
+
+    
+
+}
+.btn_whats_flutuante a{
+    /* Estilos Visuais do btn*/
+    color: rgb(255, 1, 1);
+    font-size: 20px;
+    background-color: #e7e700;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); 
 }
 
 /* Keyframes para animação contínua */
@@ -83,11 +95,11 @@
 /* Responsividade */
 @media (max-width: 768px) {
     #carouselExampleSlidesOnly {
-
         margin-top: 10px;
         max-height: 250px;
         /* altura menor em tablets */
     }
+
     .marquee-content {
         padding-right: 30px;
     }
@@ -141,7 +153,6 @@
     /* PERMITE A ROLAGEM HORIZONTAL */
     padding: 1rem;
 
-
     scroll-snap-type: x mandatory;
     /* Habilita o "ímã" no eixo X */
     scroll-behavior: smooth;
@@ -156,7 +167,6 @@
     /* Adiciona um espaçamento entre os cards */
     gap: 1.5rem;
     /* Padrão moderno */
-
 }
 
 /* Esconde a barra de rolagem para navegadores Webkit (Chrome, Safari) */
@@ -234,7 +244,6 @@
     font-size: 1em;
     line-height: 1.5;
     margin-bottom: 10px;
-
 }
 
 .pedidos_whatsapp strong {
@@ -248,7 +257,7 @@
     align-items: center;
     width: 200px;
     height: 80px;
-    background-color: #25D366;
+    background-color: #25d366;
     color: white;
     text-decoration: none;
     font-size: 1.5em;
@@ -291,14 +300,14 @@
 
 /* SESSÃO PERSONAL CHEFE  */
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
 .sessao_personal_chefe_home {
-    background-color: #12602C;
+    background-color: #12602c;
 
     display: grid;
     height: 90vh;
@@ -316,7 +325,7 @@
 
 .personal_chefe {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; 
+    grid-template-columns: 1fr 1.5fr;
     align-items: center;
 }
 
@@ -345,12 +354,11 @@
     height: 100%;
 }
 
-
 .informacoes {
     display: grid;
     align-items: center;
     width: 80%;
-    justify-self: center; 
+    justify-self: center;
 }
 
 .texto {
@@ -369,7 +377,7 @@
 .botoes_personal_chefe {
     padding: 10px 12px;
     background-color: white;
-    color: #12602C;
+    color: #12602c;
     border-radius: 10px;
     width: 100%;
     max-width: 220px;
@@ -377,70 +385,65 @@
     font-weight: bold;
 }
 
-
-
 /* RESPONSIVO (Tablets - 1024px ou menos)  */
-@media (max-width: 1000px) { 
-
+@media (max-width: 1000px) {
     .sessao_personal_chefe_home {
-        height: auto; 
+        height: auto;
         padding-bottom: 40px;
     }
-    #carouselExampleSlidesOnly{
+
+    #carouselExampleSlidesOnly {
         margin-top: 64px;
     }
 
     .personal_chefe {
         /* Layout empilhado JÁ em 1024px */
         grid-template-columns: 1fr;
-        padding: 40px 0; 
+        padding: 40px 0;
     }
 
     .imagem_personal_chefe img {
-        max-width: 420px; 
+        max-width: 420px;
     }
 
     .bloco_direito_informacoes {
-        grid-template-rows: auto auto; 
-        gap: 40px; 
-        justify-items: center; 
-        margin-top: 30px; 
+        grid-template-rows: auto auto;
+        gap: 40px;
+        justify-items: center;
+        margin-top: 30px;
     }
 
     .informacoes {
-        width: 80%; 
-        text-align: center; 
-        font-size: 1.1rem; 
+        width: 80%;
+        text-align: center;
+        font-size: 1.1rem;
     }
 
     .botoes {
         grid-template-columns: 1fr;
         gap: 20px;
         width: 100%;
-        padding: 0 20%; 
+        padding: 0 20%;
     }
 
     .botoes_personal_chefe {
-        max-width: 320px; 
+        max-width: 320px;
     }
 }
 
-
-
 /* RESPONSIVO (Mobile - 768px ou menos)    */
 @media (max-width: 768px) {
-    
     .imagem_personal_chefe img {
-        max-width: 320px; 
+        max-width: 320px;
     }
 
     .informacoes {
         width: 85%;
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 
     .botoes {
-        padding: 0 15%; 
+        padding: 0 15%;
         gap: 15px;
     }
 
@@ -451,18 +454,16 @@
     }
 }
 
-
-
 /* RESPONSIVO (Desktop - 1300px ou mais)    */
 @media (min-width: 1300px) {
     .informacoes {
-        font-size: 1.45rem; 
+        font-size: 1.45rem;
         width: 65%;
     }
 
     .texto {
         line-height: 1.5;
-        font-size: 0.8em; 
+        font-size: 0.8em;
     }
 
     .botoes_personal_chefe {
@@ -479,11 +480,10 @@
     }
 
     .imagem_personal_chefe img {
-        max-width: 900px; 
+        max-width: 900px;
         border-radius: 50px;
         display: grid;
         align-items: justify;
-
     }
 
     .cabecalho_personal_chefe {
@@ -491,16 +491,15 @@
     }
 }
 
-
 @media (min-width: 1300px) {
     .informacoes {
-        font-size: 1.45rem; 
+        font-size: 1.45rem;
         width: 65%;
     }
 
     .texto {
         line-height: 1.5;
-        font-size: 0.7em; 
+        font-size: 0.7em;
     }
 
     .botoes_personal_chefe {
@@ -517,11 +516,10 @@
     }
 
     .imagem_personal_chefe img {
-        max-width: 900px; 
+        max-width: 900px;
         border-radius: 50px;
         display: grid;
         align-items: justify;
-
     }
 
     .cabecalho_personal_chefe {
@@ -529,94 +527,76 @@
     }
 }
 
-.galeriaInsta{
-
-    
+.galeriaInsta {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    
-
 }
 
-.postInsta{
-
+.postInsta {
     display: flex;
     flex-direction: row;
     align-items: top;
     justify-content: center;
     gap: 5%;
-
 }
 
 html,
 body {
-
     margin: 0;
     padding: 0;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-
 }
 
 /* CONTAINER PRINCIPAL ( fullscreen-section ) */
 .fullscreen-section {
-
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
-
 }
 
 /* TÍTULOS E ESPAÇAMENTO */
 .titulo_sessao {
-
     text-align: center;
     margin: 5px 0 10px 0;
     font-size: 1.5em;
     flex-shrink: 0;
-
 }
 
 .titulo_mapa,
 .titulo_fachada {
-
     text-align: center;
     margin: 0;
     padding: 5px 0;
     font-size: 1em;
     flex-shrink: 0;
     color: #333;
-
 }
 
 /* CONTEÚDO ENVOLTO ( content-wrapper ) */
 .content-wrapper {
-
     display: flex;
     flex-direction: column;
     gap: 50px;
     width: 100%;
     max-width: 1800px;
-
 }
 
 /* CONTÊINERES INDIVIDUAIS ( mapa-container, image-container ) */
 .mapa-container,
 .image-container {
-
     flex-grow: 1;
     flex-basis: 0;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-
 }
 
 /* ESTILOS PARA O CONTEÚDO ( Iframe, Imagem e Endereço ) */
@@ -624,14 +604,12 @@ body {
 /* Estilos para o Iframe/Imagem principal (Ocupa o espaço restante) */
 .mapa-iframe,
 .image-container img {
-
     flex-grow: 1;
     width: 100%;
     height: auto;
     object-fit: cover;
     border: none;
     display: block;
-
 }
 
 /* Estilo para a informação de endereço (localizada no final da seção) */
