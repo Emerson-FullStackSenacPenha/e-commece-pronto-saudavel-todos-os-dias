@@ -99,7 +99,7 @@
         <div id="options">
             
             <a href="<?= BASE_URL ?>/public/index.php?page=home" class="btn1">Inicio</a>
-            <a href="<?= BASE_URL ?>/views/admin/listarProdutos.php" class="btn1">Marmitas</a>
+            <a href="<?= BASE_URL ?>/views/admin/administracaoPainel.php" class="btn1">Marmitas</a>
         </div>
     </div>
 </body>
