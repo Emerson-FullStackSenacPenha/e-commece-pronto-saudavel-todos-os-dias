@@ -15,7 +15,4 @@ require __DIR__ .'/../partials/avaliacoes.php';
 
 require __DIR__ .'/../partials/pronto_e_saudavel.php';
 
-
-
-
 ?>

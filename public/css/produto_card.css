@@ -26,6 +26,15 @@
     
 }
 
+.product-card a{
+
+    display: flex; 
+    flex-direction: column;
+    width: 280px; 
+    font-family: Arial, sans-serif;
+    
+}
+
 /* Figure das imagens */
 .product-card__figure{
 

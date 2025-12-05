@@ -1,4 +1,3 @@
-<!-- # Arquivo: .htaccess (Na raiz do projeto)
 <IfModule mod_rewrite.c>
     RewriteEngine On
     
@@ -8,4 +7,4 @@
     
     # Impede listagem de diretórios (para ninguém ver seus arquivos listados se digitar só a pasta)
     Options -Indexes
-</IfModule> -->
+</IfModule>
