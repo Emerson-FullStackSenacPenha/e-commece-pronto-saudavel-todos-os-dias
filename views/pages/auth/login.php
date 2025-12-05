@@ -1,72 +1,69 @@
 <?php
-require_once '../../../app/core/DataBaseConecta.php';
-require_once '../../../app/models/User.php';
-require_once '../../../app/core/Session.php';
-verificaLoginPaginaLogin();
-$erro = "";
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = trim($_POST["email"] ?? '');
-    $senha = trim($_POST["senha"] ?? '');
-    if (empty($email) || empty($senha)) {
-        echo "<script>alert('Por favor, preencha todos os campos: e-mail e senha!'); window.history.back();</script>";
-        exit;
-    } else {
-        $podeLogar = realizarLogin($conexao, $email, $senha);
-        if ($podeLogar === true) {
-            header("Location: logado.php");
+    require_once __DIR__ . '/../../../app/core/DataBaseConecta.php'; 
+    require_once __DIR__ . '/../../../app/models/User.php';
+    //verificaLoginPaginaLogin();
+
+    if (function_exists('verificaLoginPaginaLogin')) {
+        verificaLoginPaginaLogin();
+    }
+
+    $erro = "";
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $email = trim($_POST["email"] ?? '');
+        $senha = trim($_POST["senha"] ?? '');
+        if (empty($email) || empty($senha)) {
+            echo "<script>alert('Por favor, preencha todos os campos: e-mail e senha!'); window.history.back();</script>";
             exit;
         } else {
-            $erro = $podeLogar;
+            $podeLogar = realizarLogin($conexao, $email, $senha);
+            if ($podeLogar === true) {
+                header("Location: " . BASE_URL . "/public/index.php?page=dashboard_cliente");
+                exit;
+            } else {
+                $erro = $podeLogar;
+            }
         }
     }
-}
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Login</title>
-</head>
-
-<body>
-    <div class="container">
+<!-- Criei este ID "login-wrapper" para simular o que o body fazia antes -->
+<div id="login-wrapper">
+    
+    <!-- Mudei de "container" para "login-container" para não brigar com o Bootstrap -->
+    <div class="login-container">
 
         <div class="topo">
-            <a href="../../../public/index.php" class="bt-a">↩</a>
+            <!-- Botão de voltar (mantive a lógica, só ajustei classe se precisar) -->
+             <a href="<?= BASE_URL ?>/public/index.php" class="bt-voltar">↩</a>
         </div>
 
         <h2>Login</h2>
-        <?php if (!empty($erro)): ?>
-            <div class="erro"><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8'); ?></div>
-        <?php endif; ?>
-        <form action="" method="post" class="form-login">
-            <div>
 
-                <label for="">E-mail:</label>
-                <input type="text" name="email">
+        <form action="<?= BASE_URL ?>/public/index.php?page=login" method="post" class="form-login">
+            
+            <?php if (!empty($erro)): ?>
+                <div class="mensagem erro"><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8'); ?></div>
+            <?php endif; ?>
+
+            <div class="grupo-input">
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" id="email" class="input-login">
             </div>
-            <div>
-                <label for="">Senha:</label>
-                <input type="password" name="senha">
+
+            <div class="grupo-input">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" class="input-login">
             </div>
+
             <div class="dosBotoes">
-                <button type="submit">Entrar</button>
+                <!-- Adicionei a classe btn-entrar -->
+                <button type="submit" class="btn-entrar">Entrar</button>
 
-
-                <a href="register.php" class="bt-b">Cadastrar</a>
-
-
-
+                <!-- Atualizei o link para o padrão de rotas -->
+                <a href="<?= BASE_URL ?>/public/index.php?page=registrar" class="bt-cadastrar">Cadastrar</a>
             </div>
 
         </form>
     </div>
-
-</body>
-
-</html>
+</div>

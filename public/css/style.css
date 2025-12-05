@@ -1,90 +1,86 @@
 :root {
-
   --cor-principal: #12602c;
   --fonte-padrao: "Inter", "Segoe UI", Arial, sans-serif;
-
 }
 
-/* ======== RESET & BASE ======== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+/* ======== WRAPPER (Substituto do Body) ======== */
+/* Isso garante que o fundo verde fique SÓ na área de login */
+#login-wrapper {
+  font-family: var(--fonte-padrao);
   background: var(--cor-principal);
+  
+  /* Centralização */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  
+  /* Ocupa a altura total menos o cabeçalho/rodapé (ajuste se necessário) */
+  min-height: 90vh; 
+  width: 100%;
   padding: 20px;
-  color: #333;
+  position: relative; /* Para o background image funcionar */
+  overflow: hidden;   /* Evita barras de rolagem indesejadas */
 }
 
-/* Foto de fundo do Body */
-body::before {
+/* Foto de fundo (Agora aplicada ao Wrapper) */
+#login-wrapper::before {
   content: "";
   position: absolute;
-  width: 100%; /* um pouco maior pra cobrir bordas após girar */
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-image: url(../../../../public/images/header_images/fundo_legumes.png);
-  z-index: -1; /* mantém a imagem atrás do conteúdo */
-  opacity: 0.4; /* opcional, se quiser suavizar */
+  /* IMPORTANTE: Garanta que este caminho está certo relativo ao arquivo CSS ou use URL absoluta */
+  background-image: url('../../../../public/images/header_images/fundo_legumes.png'); 
+  z-index: 0; 
+  opacity: 0.4;
+  pointer-events: none; /* Deixa clicar através da imagem */
 }
 
-/* ======== CONTAINER ======== */
-.container {
+/* ======== CARD DO LOGIN ======== */
+.login-container {
   background: #fff;
-  
   border-radius: 16px;
   box-shadow: 10px 8px 25px rgba(0, 0, 0, 0.40);
   width: 100%;
   max-width: 400px;
   padding: 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  position: relative;
+  z-index: 1; /* Garante que fique acima da imagem de fundo */
 }
 
 .topo {
-
   width: 100%;
   display: flex;
-  justify-content: right;
-
+  justify-content: flex-end; /* right mudou para flex-end no flexbox moderno */
 }
 
-.bt-a {
-
+/* ======== BOTÃO VOLTAR ======== */
+.bt-voltar {
   background: var(--cor-principal);
   color: #fff;
-  padding: 10px;
+  padding: 8px 12px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  font-size: var(--fonte-padrao);
-
-
+  font-size: 1.2rem;
   text-decoration: none;
   text-align: center;
-
+  line-height: 1;
+  transition: 0.3s;
 }
 
-.bt-a:hover {
-
+.bt-voltar:hover {
   background-color: white;
   color: var(--cor-principal);
   box-shadow: 0px 0px 4px var(--cor-principal);
-
 }
 
-h2 {
+/* ======== TÍTULO ======== */
+.login-container h2 {
   text-align: center;
   margin-bottom: 25px;
   color: var(--cor-principal);
@@ -92,106 +88,86 @@ h2 {
   letter-spacing: 0.5px;
 }
 
-/* ======== FORM ======== */
-.form-cadastro, .form-login {
+/* ======== FORMULÁRIO ======== */
+.form-login {
   display: flex;
   flex-direction: column;
   gap: 14px;
-}
-
-.form-cadastro, .form-login {
+  width: 100%;
   font-weight: 600;
   color: #555;
   font-size: 0.9rem;
 }
 
-.form-cadastro input {
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* INPUTS ESPECÍFICOS */
+.input-login {
   padding: 10px 12px;
   border: 1.5px solid #ccc;
   border-radius: 8px;
   font-size: 0.95rem;
   transition: all 0.25s ease;
+  width: 100%; /* Garante que preencha o espaço */
 }
 
-.form-cadastro input:focus {
+.input-login:focus {
   border-color: var(--cor-principal);
-  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+  box-shadow: 0 0 0 3px rgba(18, 96, 44, 0.25); /* Cor ajustada para o verde do tema */
   outline: none;
 }
 
-
-/* ==== Form de LOGIN INPUTs  */
-
-.form-login input {
-  padding: 10px 12px;
-  border: 1.5px solid #ccc;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  transition: all 0.25s ease;
-}
-
-.form-login input:focus {
-  border-color: var(--cor-principal);
-  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
-  outline: none;
-}
-
-/* ======== BOTÃO ======== */
-
+/* ======== BOTÕES DE AÇÃO ======== */
 .dosBotoes {
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-
+  margin-top: 10px;
 }
 
-button {
+/* Botão Entrar */
+.btn-entrar {
   background: var(--cor-principal);
   color: #fff;
-  padding: 12px;
+  padding: 12px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  font-size: var(--fonte-padrao);
-
+  transition: 0.3s;
 }
 
-.bt-b {
-
-  background: var(--cor-principal);
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  font-size: var(--fonte-padrao);
-
-
-  text-decoration: none;
-  text-align: center;
-
-}
-
-.bt-b:hover {
-
-  background-color: white;
-  color: var(--cor-principal);
-  box-shadow: 0px 0px 4px var(--cor-principal);
-
-}
-
-button:hover {
-
+.btn-entrar:hover {
   background: white;
   color: var(--cor-principal);
   box-shadow: 0px 0px 4px var(--cor-principal);
-  
+}
+
+/* Botão Cadastrar */
+.bt-cadastrar {
+  background: var(--cor-principal);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.bt-cadastrar:hover {
+  background-color: white;
+  color: var(--cor-principal);
+  box-shadow: 0px 0px 4px var(--cor-principal);
 }
 
 /* ======== MENSAGENS ======== */
@@ -204,21 +180,8 @@ button:hover {
   font-size: 0.95rem;
 }
 
-.mensagem.sucesso {
-  background-color: #e8f5e9;
-  color: #1b5e20;
-  border: 1px solid #a5d6a7;
-}
-
 .mensagem.erro {
   background-color: #ffebee;
   color: #b71c1c;
   border: 1px solid #ef9a9a;
-}
-
-/* ======== RESPONSIVO ======== */
-
-@media (max-width: 450px) {
-  
-  
 }

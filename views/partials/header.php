@@ -1,13 +1,5 @@
 <?php
-// Certifique-se de que a sessão está iniciada em todas as páginas
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
-// Variável para verificar se o usuário está logado
-$usuario_logado = isset($_SESSION["user_nome"]);
- 
-// Se estiver logado, armazene o nome para uso mais fácil
-$nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
+
 ?>
  
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
@@ -83,7 +75,7 @@ $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
                         <a id="sair" href="<?= $baseUrl ?>/views/pages/auth/logout.php">Sair</a>
  
                     <?php else: ?>
-                        <a href="<?= $baseUrl ?>/views/pages/auth/login.php">
+                        <a href="<?= $baseUrl ?>/public/index.php?page=login">
                             <div id="usuario"></div>
                         </a>
                     <?php endif; ?>
