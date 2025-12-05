@@ -27,6 +27,7 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/marmita-compra.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/pg_personal_chefe.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/about.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/produtos_buscados.css">
    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">

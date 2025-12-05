@@ -1,39 +1,90 @@
 <?php
-session_start();
+// config/FinalizarCompraController.php
 
+require_once __DIR__ . '../../app/core/Session.php';
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+};
+
+$config = require __DIR__ . '/pagseguro.php';
 require_once __DIR__ . '/PagSeguroController.php';
+require_once __DIR__ . '/pagseguro_helpers.php';
 
-// 1. Verifica se o carrinho existe
-if (!isset($_SESSION['carrinho']) || empty($_SESSION['carrinho'])) {
-    die("Carrinho vazio!");
+header("Content-Type: application/json; charset=utf-8");
+
+$nome  = $_POST["nome"]  ?? null;
+$email = $_POST["email"] ?? null;
+$items = $_POST["items"] ?? null;
+
+if (!$nome || !$email) {
+    http_response_code(400);
+    echo json_encode(["error"=>"Nome e email obrigatórios"]);
+    exit;
 }
 
-// 2. Monta o array que será enviado
-$order = [
-    'reference' => 'PEDIDO_' . time(),
-    'sender' => [
-        'name' => $_POST['nome'],
-        'email' => $_POST['email'],
-        'areaCode' => substr($_POST['telefone'], 0, 2),
-        'phone' => substr($_POST['telefone'], 2)
+$items = json_decode($items,true);
+
+if (!is_array($items)) {
+    http_response_code(400);
+    echo json_encode(["error"=>"Itens inválidos"]);
+    exit;
+}
+
+// Garantir tipagem correta e valores default
+foreach ($items as &$item) {
+    $item["quantity"]    = intval($item["quantity"] ?? 1);
+    $item["unit_amount"] = intval($item["unit_amount"] ?? 0);
+}
+
+// referência do pedido
+$reference_id = "pedido-" . time();
+
+// payload
+$payload = [
+    "reference_id" => $reference_id,
+    "customer" => [
+        "name"  => $nome,
+        "email" => $email
     ],
-    'items' => []
+    "items" => $items,
+    "notification_urls" => [
+        // manter URL original
+        "https://prontoesaudavel.infinityfree.me/config/pagseguro_notification.php"
+    ]
 ];
 
-// 3. Adiciona os produtos do carrinho
-foreach ($_SESSION['carrinho'] as $produto) {
-    $order['items'][] = [
-        'id' => $produto['id'],
-        'description' => $produto['nome'],
-        'amount' => $produto['preco'],
-        'quantity' => $produto['quantidade']
-    ];
+$pg = new PagSeguroController($config);
+$response = $pg->criarCheckout($payload);
+
+// Buscar link PAY
+$link = null;
+
+$body = $response["body"] ?? [];
+
+if (!empty($body["links"]) && is_array($body["links"])) {
+    foreach ($body["links"] as $l) {
+        if (($l["rel"] ?? "") === "PAY") {
+            $link = $l["href"];
+            break;
+        }
+    }
 }
 
-// 4. Envia para o PagSeguro
-$pagseguro = new PagSeguroController();
-$urlPagamento = $pagseguro->createCheckout($order);
+$status = $response["status"] ?? 500;
 
-// 5. Redireciona o cliente
-header("Location: " . $urlPagamento);
+if ($link && in_array($status, [200,201])) {
+
+    $_SESSION["pedido_temp"]["reference_id"] = $reference_id;
+
+    echo json_encode([
+        "ok"           => true,
+        "payment_url"  => $link,
+        "reference_id" => $reference_id
+    ]);
+    exit;
+}
+
+http_response_code(500);
+echo json_encode($body);
 exit;
