@@ -1,6 +1,6 @@
 <?php
-    require_once __DIR__ . '/../../../app/core/DataBaseConecta.php'; 
-    require_once __DIR__ . '/../../../app/models/User.php';
+    //require_once __DIR__ . '/../../../app/core/DataBaseConecta.php'; 
+    //require_once __DIR__ . '/../../../app/models/User.php';
     //verificaLoginPaginaLogin();
 
     if (function_exists('verificaLoginPaginaLogin')) {
@@ -28,7 +28,7 @@
 ?>
 
 <!-- Criei este ID "login-wrapper" para simular o que o body fazia antes -->
-<div id="login-wrapper">
+<div class="login-wrapper">
     
     <!-- Mudei de "container" para "login-container" para não brigar com o Bootstrap -->
     <div class="login-container">

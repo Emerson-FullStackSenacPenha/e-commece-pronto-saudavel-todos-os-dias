@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../../../app/core/DataBaseConecta.php';
-require_once __DIR__ . '/../../../app/models/User.php';
+//require_once __DIR__ . '/../../../app/core/DataBaseConecta.php';
+//require_once __DIR__ . '/../../../app/models/User.php';
 
 
 // 2. Inicialização de Variáveis (Inclui variáveis para pré-preenchimento do formulário)
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<div id="login-wrapper">
+<div class="login-wrapper">
   
   <div class="login-container">
     

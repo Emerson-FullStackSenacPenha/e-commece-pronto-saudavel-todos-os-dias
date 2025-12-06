@@ -92,6 +92,65 @@ function realizarLogin($conexao,$email,$senha){
 
     }
 
+    function solicitarRecuperacaoSenha($conexao, $email) {
+    // Verifica se o email existe
+    $sql = "SELECT id FROM usuario WHERE email = :email";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bindValue(':email', $email);
+    $stmt->execute();
+    
+    if ($stmt->rowCount() === 0) {
+        return false; // Email não existe (por segurança, não avisamos que não existe na tela)
+    }
+
+    // Gera um código de 6 números
+    $codigo = rand(100000, 999999);
+    
+    // Define validade para DAQUI A 15 MINUTOS
+    // (Pega a hora atual do servidor e soma 15 min)
+    $validade = date('Y-m-d H:i:s', strtotime('+15 minutes'));
+
+    // Salva no banco
+    $sql = "UPDATE usuario SET reset_token = :token, reset_expires = :expires WHERE email = :email";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bindValue(':token', $codigo);
+    $stmt->bindValue(':expires', $validade);
+    $stmt->bindValue(':email', $email);
+    $stmt->execute();
+
+    return $codigo; // Retorna o código para a gente "simular" o envio
+}
+
+    // 2. Verifica o código e troca a senha
+    function redefinirSenha($conexao, $email, $codigo, $novaSenha) {
+        // Verifica se existe esse email com esse código E se a data ainda é válida
+        $sql = "SELECT id FROM usuarios 
+                WHERE email = :email 
+                AND reset_token = :token 
+                AND reset_expires > NOW()";
+                
+        $stmt = $conexao->prepare($sql);
+        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':token', $codigo);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            // Código válido! Vamos atualizar a senha.
+            // IMPORTANTE: Se você usa hash de senha (password_hash) no cadastro, use aqui também!
+            // Vou assumir que você está salvando texto puro por enquanto, mas se não, avise.
+            
+            $sqlUrl = "UPDATE usuarios SET senha = :senha, reset_token = NULL, reset_expires = NULL WHERE email = :email";
+            $update = $conexao->prepare($sqlUrl);
+            $update->bindValue(':senha', $novaSenha); // Se usar hash: password_hash($novaSenha, PASSWORD_DEFAULT)
+            $update->bindValue(':email', $email);
+            $update->execute();
+            
+            return true;
+        }
+        
+        return "Código inválido ou expirado.";
+    }
+
 }
 
 

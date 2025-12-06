@@ -1,6 +1,12 @@
 <?php 
-    session_start();
-    require_once __DIR__ . '/../app/core/Session.php';
+    session_start(); // Inicia sessão
+    require_once __DIR__ . '/../config/config.php'; // Configurações
+    require_once __DIR__ . '/../app/core/DataBaseConecta.php'; // Conexão com Banco
+    require_once __DIR__ . '/../app/core/Session.php'; // Funções de Sessão
+    require_once __DIR__ . '/../app/models/User.php'; // Funções de Usuário
+    require_once __DIR__ . '/../app/Controllers/Admin/ProductAdminController.php';
+    
+
     ob_start();
 
         // Certifique-se de que a sessão está iniciada em todas as páginas
@@ -13,13 +19,14 @@
     // Se estiver logado, armazene o nome para uso mais fácil
     $nome_usuario = $usuario_logado ? $_SESSION["user_nome"] : '';
 
+    $ehAdmin = $usuario_logado && isset($_SESSION['user_tipo']) && $_SESSION['user_tipo'] === 'admin';
+
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
 
     define('VIEWS_PATH', __DIR__ . '/../views');
     $baseUrl = 'http://localhost/e-commece-pronto-saudavel-todos-os-dias';
 
-    require_once '../config/config.php';
 
 
     $action = $_POST['action'] ?? null;
@@ -52,8 +59,23 @@
             'about' => VIEWS_PATH . '/pages/about.php',
             'dashboard_cliente' => VIEWS_PATH . '/pages/auth/logado.php',
             'login' => VIEWS_PATH . '/pages/auth/login.php',
-            'registrar' => VIEWS_PATH . '/pages/auth/register.php'
+            'registrar' => VIEWS_PATH . '/pages/auth/register.php',
             // Adicione as outras páginas aqui
+
+            // --- ROTAS DE ADMINISTRADOR (Mapeando a pasta views/admin) ---
+            'painel_adm'   => VIEWS_PATH . '/admin/administracaoPainel.php',
+            'listar_produtos'   => VIEWS_PATH . '/admin/listarProdutos.php',
+            'inserir_produto'   => VIEWS_PATH . '/admin/inserir.php',
+            'atualizar_produto' => VIEWS_PATH . '/admin/atualizarProdutos.php',
+            'excluir_produto'   => VIEWS_PATH . '/admin/excluirProdutos.php',
+        ];
+
+        $paginasAdmin = [
+            'painel_adm',
+            'listar_produtos',
+            'inserir_produto',
+            'atualizar_produto',
+            'excluir_produto'
         ];
         $paginasProtegidas = [
             'dashboard_cliente'
@@ -76,6 +98,19 @@
         if (in_array($page, $paginasGuest) && $usuario_logado) {
             // Se ele tentar ir pro login mas já tá logado, manda pro dashboard
             header("Location: " . BASE_URL . "/public/index.php?page=dashboard_cliente");
+            exit;
+        }
+
+                // Se a página é de admin E o usuário NÃO é admin...
+        if (in_array($page, $paginasAdmin) && !$ehAdmin) {
+            
+            // Se ele está logado mas é só cliente, manda pro painel dele
+            if ($usuarioLogado) {
+                header("Location: " . BASE_URL . "/public/index.php?page=dashboard_cliente");
+            } else {
+                // Se nem logado está, manda pro login
+                header("Location: " . BASE_URL . "/public/index.php?page=login");
+            }
             exit;
         }
 
