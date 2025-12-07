@@ -332,6 +332,7 @@
     border-radius: 50px;
     height: auto;
     display: block;
+    padding-left: 5px;
 }
 
 .bloco_direito_informacoes {
@@ -358,26 +359,47 @@
 }
 
 .botoes {
+
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-self: start;
+    align-self: center;
     justify-items: center;
-    gap: 10px;
     
 }
 
 .botoes_personal_chefe {
-    padding: 10px 12px;
+    
     background-color: white;
     color: #12602C;
     border-radius: 10px;
-    width: 100%;
+    
+    height: 30px;
+    width: 350px;
     max-width: 220px;
     text-align: center;
     font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
+.botoes_personal_chefe a{
 
+    text-decoration: none;
+    font-size: 1rem;
+    color: #12602C;
+
+}
+
+#contador-animado{
+
+    margin: 0;
+    padding: 0;
+    
+
+}
 
 /* RESPONSIVO (Tablets - 1024px ou menos)  */
 @media (max-width: 1000px) { 
@@ -441,8 +463,8 @@
     }
 
     .botoes {
-        padding: 0 15%; 
-        gap: 15px;
+        padding: 0; 
+        gap: 20px;
     }
 
     .botoes_personal_chefe {
@@ -476,7 +498,7 @@
     }
 
     .botoes {
-        gap: 215px;
+        gap: 2%;
     }
 
     .imagem_personal_chefe img {
@@ -514,7 +536,7 @@
     }
 
     .botoes {
-        gap: 215px;
+        gap: 2%;
     }
 
     .imagem_personal_chefe img {
