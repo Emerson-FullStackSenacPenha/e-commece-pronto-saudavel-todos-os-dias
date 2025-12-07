@@ -129,7 +129,7 @@
 .carousel-container {
     position: relative;
     width: 95%;
-    max-width: 1200px;
+    
     /* Largura máxima do carrossel */
     margin: 0 auto;
     /* Centraliza o container na página */
