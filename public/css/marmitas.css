@@ -47,11 +47,7 @@ main.product-grid {
 
 /* =========================== Responsividade =========================== */
 @media (max-width: 768px) {
-    main {
-        margin-top: 50px; /* header menor no mobile */
-        margin-top: 100px;
-        /* header menor no mobile */
-    }
+    
 
     .titulo {
         font-size: 1.5rem;
