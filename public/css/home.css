@@ -209,7 +209,7 @@
 }
 
 .sessao_atendimento {
-    background-color: #a9bcc3b4;
+    background-color: #12602c;
     padding: 30px;
     display: flex;
     align-items: center;
@@ -219,11 +219,16 @@
 }
 
 .texto_atendimento {
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
     flex-grow: 4;
     max-width: 70%;
 }
 
 .texto_atendimento h3 {
+    text-align: center;
+    width: 100%;
     font-size: 1.3em;
     font-weight: 700;
     margin-top: 0;
