@@ -1,8 +1,8 @@
 <?php
-require_once '../../app/core/Session.php'; 
+/* require_once '../../app/core/Session.php'; 
 require_once '../../app/core/DataBaseConecta.php'; 
 require_once '../../app/Controllers/Admin/ProductAdminController.php'; 
-
+ */
 $id = $_GET['id'] ?? null;
 
 if ($id) {
@@ -12,6 +12,6 @@ if ($id) {
 }
 
 // Após excluir, redireciona
-header("Location: listarProdutos.php");
+header("Location: " . BASE_URL . "/public/index.php?page=listar_produtos");
 exit();
 ?>
