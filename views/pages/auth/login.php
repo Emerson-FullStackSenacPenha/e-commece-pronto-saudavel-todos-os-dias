@@ -17,7 +17,7 @@
         } else {
             $podeLogar = realizarLogin($conexao, $email, $senha);
             if ($podeLogar === true) {
-                header("Location: " . BASE_URL . "/public/index.php?page=dashboard_cliente");
+                header("Location: " . BASE_URL . "/public/index.php?page=home");
                 exit;
             } else {
                 $erro = $podeLogar;
@@ -56,6 +56,7 @@
                 <input type="password" name="senha" id="senha" class="input-login">
             </div>
 
+            <a href="<?= BASE_URL ?>/public/index.php?page=recuperar_senha" class="" style="tex-align:center;">Esqueceu Senha</a>
             <div class="dosBotoes">
                 <!-- Adicionei a classe btn-entrar -->
                 <button type="submit" class="btn-entrar">Entrar</button>

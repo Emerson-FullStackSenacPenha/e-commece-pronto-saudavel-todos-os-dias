@@ -53,6 +53,7 @@
 
 /* card avaliacão */
 .artigo_avaliacao {
+    flex: 0 0 calc(33.666% - 20px);
     min-width: 280px;
     max-width: 280px;
     background: white;

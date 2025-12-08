@@ -91,7 +91,11 @@
             <div id="options">
                 
                 <a href="<?= BASE_URL ?>/public/index.php?page=home" class="btn1">Inicio</a>
-                <a href="<?= BASE_URL ?>/public/index.php?page=painel_adm" class="btn1">Marmitas</a>
+                <?php if($ehAdmin): ?>
+                    <a href="<?= BASE_URL ?>/public/index.php?page=painel_adm" class="btn1">Painel ADM</a>
+                <?php else: ?>
+                    <a href="<?= BASE_URL ?>/public/index.php?page=listar_produtos" class="btn1">Marmitas</a>
+                <?php endif ?>
             </div>
         </div>
     </div>

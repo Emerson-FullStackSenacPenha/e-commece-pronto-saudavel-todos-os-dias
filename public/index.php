@@ -68,6 +68,8 @@
             'inserir_produto'   => VIEWS_PATH . '/admin/inserir.php',
             'atualizar_produto' => VIEWS_PATH . '/admin/atualizarProdutos.php',
             'excluir_produto'   => VIEWS_PATH . '/admin/excluirProdutos.php',
+            'recuperar_senha'   => VIEWS_PATH . '/pages/auth/recuperar_senha.php',
+            'nova_senha'      => VIEWS_PATH . '/pages/auth/nova_senha.php',
         ];
 
         $paginasAdmin = [
@@ -85,7 +87,8 @@
         $paginasGuest = [
             'login',
             'registrar',
-            'recuperar_senha'
+            'recuperar_senha',
+            'nova_senha'
         ];
 
         if (in_array($page, $paginasProtegidas) && !$usuario_logado) {
