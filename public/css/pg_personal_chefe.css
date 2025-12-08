@@ -215,6 +215,10 @@ p {
     display: flex;
     align-items: center;
   }
+
+  .sessao_planos_personal_chefe {
+    margin-top: 70px;
+  }
 }
 
 @media (max-width: 458px) {
