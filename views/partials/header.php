@@ -72,7 +72,7 @@
                     <?php if ($usuario_logado): ?>
  
                         <a id="nome_logado" href="<?= $baseUrl ?>/public/index.php?page=dashboard_cliente">Olá, <?= htmlspecialchars($nome_usuario) ?></a>
-                        <a id="sair" href="<?= $baseUrl ?>/views/pages/auth/logout.php">Sair</a>
+                        <a id="sair" href="<?= $baseUrl ?>/public/index.php?page=logout">Sair</a>
  
                     <?php else: ?>
                         <a href="<?= $baseUrl ?>/public/index.php?page=login">
