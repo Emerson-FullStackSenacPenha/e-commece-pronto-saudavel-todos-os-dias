@@ -10,7 +10,6 @@ $baseUrl = sprintf(
 
 // Remove a pasta /public da URL base se ela existir, para apontar para a raiz correta
 $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
-    echo $baseUrl;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,6 +27,8 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/marmita-compra.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/pg_personal_chefe.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/about.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/produtos_buscados.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/style.css">
    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,10 +37,10 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
 
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/dialog_login.css">
     <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/footer.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/administracaoPainel.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/public/css/produtos-crud.css">
 </head>
 <body>
-    
-
 
       <?php require_once VIEWS_PATH . '/partials/header.php'; ?>
 
@@ -54,8 +55,8 @@ $baseUrl = rtrim(str_replace('/public', '', $baseUrl), '/');
         ?>
     </main>
 
-        <?php require_once VIEWS_PATH . '/partials/btn_flutuante.php'; ?>
-        <?php require_once VIEWS_PATH . '/partials/footer.php'; ?>
+        <?php require_once VIEWS_PATH . '/partials/btn_flutuante.php'?>
+        <?php require_once VIEWS_PATH . '/partials/footer.php' ?>
 
    
 

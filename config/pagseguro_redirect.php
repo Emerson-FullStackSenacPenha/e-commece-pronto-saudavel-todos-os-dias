@@ -1,74 +1,49 @@
 <?php
-// /public/pagseguro_redirect.php
-session_start();
+// config/checkout_return.php  (arquivo 5/8 — adaptar se tiver nome diferente)
+require_once __DIR__ . '../../app/core/Session.php';
 
-// Ajuste o caminho de require conforme sua estrutura:
-require_once __DIR__ . '/PagSeguroController.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+};
 
-// Proteção mínima: verifique se método POST (o botão de finalizar deve enviar POST)
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    die('Método não permitido.');
-}
+$config = require __DIR__ . '/pagseguro.php';
+require_once __DIR__ . '/pagseguro_helpers.php';
 
-// Verifique se existe carrinho
-if (empty($_SESSION['carrinho']) || !is_array($_SESSION['carrinho'])) {
-    die('Carrinho vazio.');
-}
+$checkoutId = $_GET['checkout_id'] ?? null;
+$reference  = $_GET['reference_id'] ?? null;
 
-// Valide os dados do cliente — aqui assumimos que o front enviou nome, email e telefone via POST
-$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-$telefone = preg_replace('/\D/', '', $_POST['telefone'] ?? '');
+$status = null;
 
-// Se os dados forem enviados por outra página, adapte (ex.: cliente já logado, etc.)
-if (empty($nome) || empty($email) || strlen($telefone) < 8) {
-    // Em projetos reais, redirecione de volta para o formulário com erro
-    die('Dados do comprador incompletos. Preencha nome, email e telefone corretamente.');
-}
+if ($checkoutId) {
 
-// Monta o pedido
-$order = [
-    'reference' => 'PEDIDO_' . time(),
-    'sender' => [
-        'name' => $nome,
-        'email' => $email,
-        'areaCode' => substr($telefone, 0, 2),
-        'phone' => substr($telefone, 2)
-    ],
-    'items' => []
-];
+    $baseUrl = ($config['environment'] === "production")
+        ? "https://api.pagseguro.com"
+        : "https://sandbox.api.pagseguro.com";
 
-foreach ($_SESSION['carrinho'] as $produto) {
-    // assegure-se que cada produto contém id, nome, preco e quantidade
-    $id = isset($produto['id']) ? (string)$produto['id'] : null;
-    $nomeProduto = isset($produto['nome']) ? (string)$produto['nome'] : 'Produto';
-    $preco = isset($produto['preco']) ? (float)$produto['preco'] : 0.0;
-    $quant = isset($produto['quantidade']) ? (int)$produto['quantidade'] : 1;
+    $url = $baseUrl . "/checkouts/" . urlencode($checkoutId);
 
-    if ($preco <= 0) {
-        die('Preço inválido em um dos produtos.');
+    $response = ps_api_request("GET", $url, $config['token']);
+
+    if (in_array($response["status"] ?? 500, [200,201])) {
+
+        $data = $response["body"] ?? [];
+
+        $status =
+            $data["status"]
+            ?? ($data["payment"]["status"] ?? null);
+
+        ps_log("✅ Checkout: " . json_encode([
+            "checkout_id"=>$checkoutId,
+            "reference"=>$reference,
+            "status"=>$status
+        ]));
     }
-
-    $order['items'][] = [
-        'id' => $id,
-        'description' => $nomeProduto,
-        'amount' => number_format($preco, 2, '.', ''),
-        'quantity' => $quant
-    ];
 }
 
-try {
-    $pagseguro = new PagSeguroController();
-    $redirectUrl = $pagseguro->createCheckout($order);
+$redirect = "https://prontoesaudavel.infinityfree.me/".
+            "?reference=".urlencode($reference).
+            "&checkout=".urlencode($checkoutId).
+            "&status=".urlencode($status);
 
-    // Opcional: salvar no banco um registro do pedido com reference e checkout url
-    // TODO: coloque aqui sua lógica de persistência (pedidos, status, uuid, etc.)
-
-    header("Location: " . $redirectUrl);
-    exit;
-} catch (Exception $e) {
-    error_log("Erro PagSeguro: " . $e->getMessage());
-    // Em produção, mostre uma mensagem amigável e não exponha detalhes
-    die("Erro ao processar pagamento: " . htmlspecialchars($e->getMessage()));
-}
+header("Location: {$redirect}");
+exit;
