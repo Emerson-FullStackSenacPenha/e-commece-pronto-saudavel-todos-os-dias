@@ -171,11 +171,11 @@
  
  
                         <?php if ($usuario_logado): ?>
-                            <a href="#"> <span id="nome_usuario_logado">Olá, <?= htmlspecialchars($nome_usuario) ?></span> </a>
-                            <a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/logout.php" class="btn">Sair</a>
+                            <a href="<?= $baseUrl ?>/public/index.php?page=dashboard_cliente"> <span id="nome_usuario_logado">Olá, <?= htmlspecialchars($nome_usuario) ?></span> </a>
+                            <a href="<?= $baseUrl ?>/public/index.php?page=logout" class="btn">Sair</a>
                         <?php else: ?>
-                            <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/login.php">Entrar</a></li>
-                            <li><a href="/e-commece-pronto-saudavel-todos-os-dias/views/pages/auth/register.php">Cadastrar</a></li>
+                            <li><a href="<?= $baseUrl ?>/public/index.php?page=login">Entrar</a></li>
+                            <li><a href="<?= $baseUrl ?>/public/index.php?page=registrar">Cadastrar</a></li>
                         <?php endif; ?>
  
                     </ul>
