@@ -40,32 +40,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php if ($erro): ?>
-    <p style="color: red;"><?php echo $erro; ?></p>
-<?php endif; ?>
+<div class="div_produtos_crud ">
+    <?php if ($erro): ?>
+        <p style="color: red;"><?php echo $erro; ?></p>
+    <?php endif; ?>
 
-<form action="" method="post" enctype="multipart/form-data">
-    <div>
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" required>
-    </div>
-    <div>
-        <label for="descricao">Descrição</label>
-        <textarea name="descricao" id="descricao" rows="5"></textarea>
-    </div>
-    <div>
-        <label for="valor">Preço:</label>
-        <input type="number" name="valor" id="valor" required min="0" step="0.01">
-    </div>
-    <div>
-        <label for="estoque">Quantidade:</label>
-        <input type="number" name="estoque" id="estoque" required min="0">
-    </div>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required>
+        </div>
+        <div>
+            <label for="descricao">Descrição</label>
+            <textarea name="descricao" id="descricao" rows="5"></textarea>
+        </div>
+        <div>
+            <label for="valor">Preço:</label>
+            <input type="number" name="valor" id="valor" required min="0" step="0.01">
+        </div>
+        <div>
+            <label for="estoque">Quantidade:</label>
+            <input type="number" name="estoque" id="estoque" required min="0">
+        </div>
 
-    <div>
-        <label for="imagem_url">Imagem do produto:</label>
-        <input type="file" name="imagem_url" id="imagem_url">
-    </div>
+        <div>
+            <label for="imagem_url">Imagem do produto:</label>
+            <input type="file" name="imagem_url" id="imagem_url">
+        </div>
 
-    <button type="submit">Salvar</button>
-</form>
+        <button type="submit">Salvar</button>
+    </form>
+</div>

@@ -8,16 +8,13 @@
 
 ?>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #12602c;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<div class="container-conteudo-padrao">
+    
+    <div class="card-login">
+        <h1>Seja bem-vindo, <?= htmlspecialchars($_SESSION["user_nome"], ENT_QUOTES, 'UTF-8'); ?>!</h1>
+        <p>E ótimas compras</p>
 
+<<<<<<< Updated upstream
         body::before {
             content: "";
             position: absolute;
@@ -97,6 +94,12 @@
                     <a href="<?= BASE_URL ?>/public/index.php?page=listar_produtos" class="btn1">Marmitas</a>
                 <?php endif ?>
             </div>
+=======
+        <div class="opcoes-botoes">
+            <a href="<?= BASE_URL ?>/public/index.php?page=home" class="btn-verde">Inicio</a>
+            <a href="<?= BASE_URL ?>/public/index.php?page=painel_adm" class="btn-verde">Marmitas</a>
+>>>>>>> Stashed changes
         </div>
     </div>
+
 </div>

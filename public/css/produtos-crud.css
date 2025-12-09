@@ -1,0 +1,72 @@
+.div_produtos_crud {
+
+    /* Centralização */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Ocupa a altura total menos o cabeçalho/rodapé (ajuste se necessário) */
+    min-height: 90vh;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    /* Para o background image funcionar */
+    overflow: hidden;
+    /* Evita barras de rolagem indesejadas */
+}
+
+.div_produtos_crud table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.div_produtos_crud th,.div_produtos_crud td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.div_produtos_crud th {
+    background-color: #f2f2f2;
+}
+
+.miniatura {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.miniatura:hover {
+    transform: scale(2);
+}
+
+.btn-acao {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.btn-editar {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-excluir {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-novo {
+    display: inline-block;
+    background-color: #12602c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}

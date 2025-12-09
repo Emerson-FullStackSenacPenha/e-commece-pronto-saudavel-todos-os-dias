@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <h1>✏️ Editar Produto</h1>
 
+<div class="container-conteudo-padrao">
 <form action="" method="post" enctype="multipart/form-data">
     <div>
         <label for="nome">Nome:</label>
@@ -90,3 +91,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button type="submit">Salvar Alterações</button>
     <a href="<?= BASE_URL ?>/public/index.php?page=listar_produtos">Cancelar</a>
 </form>
+</div>
