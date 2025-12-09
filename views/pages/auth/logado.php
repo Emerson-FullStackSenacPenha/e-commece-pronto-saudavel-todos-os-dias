@@ -1,17 +1,13 @@
 <?php
-//Usado para proteger a página, caso o usuário tente entrar direto, ele vai ser redirecionado para a página de login.
-require_once '../../../app/core/Session.php';
-// Verifica se o usuário está logado
-verificaLogin();
+    //Usado para proteger a página, caso o usuário tente entrar direto, ele vai ser redirecionado para a página de login.
+    //require_once '../../../app/core/Session.php';
+
+    // Verifica se o usuário está logado
+    //verificaLogin();
+
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Área Logada</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,7 +24,7 @@ verificaLogin();
             width: 100%;
             /* um pouco maior pra cobrir bordas após girar */
             height: 100%;
-            background-image: url(../../../public/images/header_images/fundo_legumes.png);
+            background-image: url(<?= BASE_URL ?>../public/images/header_images/fundo_legumes.png);
             z-index: -1;
             /* mantém a imagem atrás do conteúdo */
             opacity: 0.4;
@@ -86,19 +82,17 @@ verificaLogin();
             color: #12602c;
         }
     </style>
-</head>
+<div id="login-wrapper">
+    <div id="login-wrapper">
+        <div class="card">
+            <h1>Seja bem-vindo, <?= htmlspecialchars($_SESSION["user_nome"], ENT_QUOTES, 'UTF-8'); ?>!</h1>
+            <p>E ótimas compras</p>
 
-<body>
-    <div class="card">
-        <h1>Seja bem-vindo, <?= htmlspecialchars($_SESSION["user_nome"], ENT_QUOTES, 'UTF-8'); ?>!</h1>
-        <p>E ótimas compras</p>
-
-        <div id="options">
-            
-            <a href="/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=home" class="btn1">Inicio</a>
-            <a href="/e-commece-pronto-saudavel-todos-os-dias/public/index.php?page=produtos" class="btn1">Marmitas</a>
+            <div id="options">
+                
+                <a href="<?= BASE_URL ?>/public/index.php?page=home" class="btn1">Inicio</a>
+                <a href="<?= BASE_URL ?>/public/index.php?page=painel_adm" class="btn1">Marmitas</a>
+            </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>

@@ -69,6 +69,30 @@
 
 }
 
+/* BTN flutuante VVVVVVVVVVVVVVVV */
+.btn_whats_flutuante {
+    position: fixed; /* Fixa na tela */
+    bottom: 40px; /* Distância do btn para baixo */
+    right: 20px; /* Distância para direita */
+    z-index: 1000; /* Ordem, de altura de camada. */
+
+
+
+
+}
+.btn_whats_flutuante a{
+    /* Estilos Visuais do btn*/
+    color: rgb(255, 1, 1);
+    font-size: 20px;
+    background-color: #e7e700;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); 
+}
+
 /* Keyframes para animação contínua */
 @keyframes marquee {
     0% {
