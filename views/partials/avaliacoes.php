@@ -25,8 +25,8 @@
                 <article class="artigo_avaliacao">
 
                     <div class="avaliacao_header">
-                        <div class="avatar"></div>
-                        <span class="nome_usuario"> Maria Flores </span>
+                        <div class="avatar"><img src="<?= BASE_URL ?>/public/images/icons/icone_usuario_avaliacoes.png" alt=""></div>
+                        <span class="nome_usuario"> <b>Maria Flores</b> </span>
                     </div>
 
                     <p>A comida é de verdade, com aquele gostinho caseiro que faz toda a diferença na hora do almoço.</p>
@@ -38,8 +38,8 @@
                 <article class="artigo_avaliacao">
 
                     <div class="avaliacao_header">
-                        <div class="avatar"></div>
-                        <span class="nome_usuario"> Julio Tavares </span>
+                        <div class="avatar"><img src="<?= BASE_URL ?>/public/images/icons/icone_usuario_avaliacoes.png" alt=""></div>
+                        <span class="nome_usuario"> <b>Julio Tavares</b> </span>
                     </div>
 
                     <p>Pra quem busca praticidade sem perder a qualidade, eu super recomendo!</p>
@@ -51,8 +51,8 @@
                 <article class="artigo_avaliacao">
 
                     <div class="avaliacao_header">
-                        <div class="avatar"></div>
-                        <span class="nome_usuario"> Eminem </span>
+                        <div class="avatar"><img src="<?= BASE_URL ?>/public/images/icons/icone_usuario_avaliacoes.png" alt=""></div>
+                        <span class="nome_usuario"> <b>Eminem</b> </span>
                     </div>
 
                     <p>Ter uma refeição completa e saborosa esperando por você é o melhor investimento no meu dia a dia.</p>
@@ -64,8 +64,8 @@
                 <article class="artigo_avaliacao">
 
                     <div class="avaliacao_header">
-                        <div class="avatar"></div>
-                        <span class="nome_usuario"> Pedro Full-Stack </span>
+                        <div class="avatar"><img src="<?= BASE_URL ?>/public/images/icons/icone_usuario_avaliacoes.png" alt=""></div>
+                        <span class="nome_usuario"> <b>Pedro Full-Stack</b> </span>
                     </div>
 
                     <p> Ter uma refeição completa, balanceada e deliciosa.</p>
@@ -77,8 +77,8 @@
                 <article class="artigo_avaliacao">
 
                     <div class="avaliacao_header">
-                        <div class="avatar"></div>
-                        <span class="nome_usuario"> Batman </span>
+                        <div class="avatar"><img src="<?= BASE_URL ?>/public/images/icons/icone_usuario_avaliacoes.png" alt=""></div>
+                        <span class="nome_usuario"> <b>Batman</b> </span>
                     </div>
 
                     <p> Ter uma refeição completa, balanceada e deliciosa.</p>
@@ -90,8 +90,8 @@
                 <article class="artigo_avaliacao">
 
                     <div class="avaliacao_header">
-                        <div class="avatar"></div>
-                        <span class="nome_usuario"> AmoPaçoca </span>
+                        <div class="avatar"><img src="<?= BASE_URL ?>/public/images/icons/icone_usuario_avaliacoes.png" alt=""></div>
+                        <span class="nome_usuario"> <b>AmoPaçoca</b> </span>
                     </div>
 
                     <p> Ter uma refeição completa, balanceada e deliciosa.</p>
