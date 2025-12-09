@@ -16,25 +16,29 @@
   align-items: center;
   
   /* Ocupa a altura total menos o cabeçalho/rodapé (ajuste se necessário) */
-  min-height: 90vh; 
-  width: 100%;
+  margin-top: 100px; /* Espaço do header */
+  min-height: calc(90vh - 100px);
   padding: 20px;
   position: relative; /* Para o background image funcionar */
   overflow: hidden;   /* Evita barras de rolagem indesejadas */
 }
 
 /* Foto de fundo (Agora aplicada ao Wrapper) */
-.login-wrapper::before, .container-conteudo-padrao::before {
-  /* content: ""; */
-  /* position: absolute; */
-  /* top: 0; */
-  /* left: 0; */
-  /* width: 100%; */
-  /* height: 100%; */
-  /* background-image: url(../../public/images/header_images/fundo_legumes.png); */
-  /* z-index: 0;  */
-  /* opacity: 0.4; */
-  /* pointer-events: none; */ /* Deixa clicar através da imagem */
+.login-wrapper::before,
+.container-conteudo-padrao::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Caminho relativo correto a partir de `public/css/style.css` */
+  background-image: url('../images/header_images/fundo_legumes.png');
+  background-position: center;
+  background-repeat: repeat;
+  z-index: 0;
+  opacity: 0.4;
+  /* pointer-events: none; */  /* Deixa clicar através da imagem */
 }
 
 /* ======== CARD DO LOGIN ======== */
@@ -230,3 +234,7 @@
         min-height: 70vh;
     }
 }
+
+
+
+background-image: url('../images/header_images/fundo_legumes.png');

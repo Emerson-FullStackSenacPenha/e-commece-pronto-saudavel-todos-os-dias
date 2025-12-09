@@ -35,7 +35,7 @@
 
         <div class="topo">
             <!-- Botão de voltar (mantive a lógica, só ajustei classe se precisar) -->
-             <a href="<?= BASE_URL ?>/public/index.php" class="bt-voltar">↩</a>
+             <a href="<?= BASE_URL ?>/public/index.php?page=home" class="bt-voltar">↩</a>
         </div>
 
         <h2>Login</h2>

@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<div id="login-wrapper">
+<div class="login-wrapper">
     <div class="login-container">
         <h2>Definir Nova Senha</h2>
         

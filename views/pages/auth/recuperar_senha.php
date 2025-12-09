@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<div id="login-wrapper">
+<div class="login-wrapper">
     <div class="login-container">
         <div class="topo">
             <a href="<?= BASE_URL ?>/public/index.php?page=login" class="bt-voltar">↩</a>
