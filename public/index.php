@@ -25,8 +25,6 @@
     error_reporting(E_ALL);
 
     define('VIEWS_PATH', __DIR__ . '/../views');
-    $baseUrl = 'http://localhost/e-commece-pronto-saudavel-todos-os-dias';
-
 
 
     $action = $_POST['action'] ?? null;
@@ -59,6 +57,7 @@
             'about' => VIEWS_PATH . '/pages/about.php',
             'dashboard_cliente' => VIEWS_PATH . '/pages/auth/logado.php',
             'login' => VIEWS_PATH . '/pages/auth/login.php',
+            'logout' => VIEWS_PATH . '/pages/auth/logout.php',
             'registrar' => VIEWS_PATH . '/pages/auth/register.php',
             'produtos_buscados' =>  VIEWS_PATH . '/pages/produtos_buscados.php',
             // Adicione as outras páginas aqui
@@ -69,7 +68,6 @@
             'inserir_produto'   => VIEWS_PATH . '/admin/inserir.php',
             'atualizar_produto' => VIEWS_PATH . '/admin/atualizarProdutos.php',
             'excluir_produto'   => VIEWS_PATH . '/admin/excluirProdutos.php',
-
         ];
 
         $paginasAdmin = [
@@ -80,14 +78,16 @@
             'excluir_produto'
         ];
         $paginasProtegidas = [
-            'dashboard_cliente'
+            'dashboard_cliente',
+            'logout'
         ];
 
         // 3. Lista de páginas exclusivas para VISITANTES (Quem já logou não deve ver)
         $paginasGuest = [
             'login',
             'registrar',
-            'recuperar_senha'
+            'recuperar_senha',
+            'nova_senha'
         ];
 
         if (in_array($page, $paginasProtegidas) && !$usuario_logado) {
