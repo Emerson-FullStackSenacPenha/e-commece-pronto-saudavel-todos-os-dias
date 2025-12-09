@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 768) {
             return 1; // Mobile: move 1 card por vez
         }
-        return 3; // Desktop: move 3 cards por vez
+        return 1; // Desktop: move 3 cards por vez
     };
 
     // Função para atualizar a posição do carrossel
