@@ -141,9 +141,11 @@
             <a id="logo" href="<?= $baseUrl ?>/public/index.php?page=home"></a>
  
             <!-- Barra de pesquisa -->
-            <div id="busca">
-                <input type="text" placeholder="🔍">
-            </div>
+            <form id="busca" action="<?= $baseUrl ?>/public/index.php" method="GET">
+                <input type="hidden" name="page" value="produtos_buscados">
+
+                <input type="search" name="busca" placeholder="Digite o produto que deseja aqui...">
+            </form>
  
         </div>
  
@@ -186,8 +188,9 @@
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=personalChefe">Personal Chefe</a></li>
                         <li><a href="">Entregas</a></li>
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=carrinho_de_compras">Carrinho de Compras</a></li>
-                        <li><a href="<?= $baseUrl ?>/public/index.php?page=produtos">Marmitas</a></li>
-                        <li><a href="">Outros Produtos</a></li>
+                        <a href="<?= $baseUrl ?>/public/index.php?page=marmitas">Marmitas</a>
+                        <a href="<?= $baseUrl ?>/public/index.php?page=outros">Outros Produtos</a>
+
                         <li><a href="<?= $baseUrl ?>/public/index.php?page=about">Quem Somos</a></li>
  
                     </ul>
