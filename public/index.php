@@ -60,6 +60,7 @@
             'dashboard_cliente' => VIEWS_PATH . '/pages/auth/logado.php',
             'login' => VIEWS_PATH . '/pages/auth/login.php',
             'registrar' => VIEWS_PATH . '/pages/auth/register.php',
+            'produtos_buscados' =>  VIEWS_PATH . '/pages/produtos_buscados.php',
             // Adicione as outras páginas aqui
 
             // --- ROTAS DE ADMINISTRADOR (Mapeando a pasta views/admin) ---
@@ -68,6 +69,7 @@
             'inserir_produto'   => VIEWS_PATH . '/admin/inserir.php',
             'atualizar_produto' => VIEWS_PATH . '/admin/atualizarProdutos.php',
             'excluir_produto'   => VIEWS_PATH . '/admin/excluirProdutos.php',
+
         ];
 
         $paginasAdmin = [
