@@ -16,7 +16,7 @@
                     <div class="dados-cliente">
                         <h3 class="nome-cliente">Claudio</h3>
                         <p class="dados-separados">31 anos | Personal Trainer</p>
-                        <p class="star">★★★★★</p>
+                        <p class="star">★★★★☆</p>
                     </div>
 
                     
@@ -59,7 +59,7 @@
                     <div class="dados-cliente">
                         <h3 class="nome-cliente">Joana</h3>
                         <p class="dados-separados">40 anos | Empresária</p>
-                        <p class="star">★★★★★</p>
+                        <p class="star">★★★★☆</p>
                     </div>
 
                 </div>
@@ -99,7 +99,7 @@
                     <div class="dados-cliente">
                         <h3 class="nome-cliente">Mateus</h3>
                         <p class="dados-separados">19 anos | Estágiario</p>
-                        <p class="star">★★★★★</p>
+                        <p class="star">★★★★☆</p>
                     </div>
 
                 </div>
