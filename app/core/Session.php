@@ -3,7 +3,10 @@
 require_once 'DataBaseConecta.php';
 
 //Cria uma sessão ou retorna se já estiver uma.
-session_start();
+//session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 //Função Para verificar se o usuário esta logado, se não tiver ele volta para a página de login
 function verificaLogin() {
